@@ -19,15 +19,30 @@ public class Database {
         }
 	}
 	
-	public void getIDs() {
+	public void addStudents(Student std) {
+		try {
+
+			Statement stmt = this.conn.createStatement();
+			
+			String query = "INSERT INTO students(name,address,number) VALUES('"+std.getName()+"','"+std.getUniversity()+"',"+std.getNumber()+");";
+
+			int rs = stmt.executeUpdate(query);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+	}
+	public void getStudents() {
 		try {
 
 			Statement stmt = this.conn.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM test;");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM students;");
 
 			while(rs.next()) {
-				System.out.println(rs.getString("id"));
+				System.out.println(rs.getString("name"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

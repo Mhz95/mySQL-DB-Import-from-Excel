@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.1.37-MariaDB)
 # Database: cscdb
-# Generation Time: 2020-03-19 11:37:01 +0000
+# Generation Time: 2020-03-19 14:39:25 +0000
 # ************************************************************
 
 
@@ -20,28 +20,19 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table test
+# Dump of table students
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `test`;
+DROP TABLE IF EXISTS `students`;
 
-CREATE TABLE `test` (
+CREATE TABLE `students` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) NOT NULL DEFAULT '',
+  `address` varchar(120) DEFAULT NULL,
+  `number` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-
-INSERT INTO `test` (`id`)
-VALUES
-	(1),
-	(2),
-	(3),
-	(4);
-
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 
