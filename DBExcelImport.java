@@ -1,6 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.List;
-
+import java.util.Scanner;
 import exception.InvalidExcelFileException;
 /**
  * Project to import from excel files to DB
@@ -14,12 +14,21 @@ public class DBExcelImport {
 
 	 public static void main(String[] args) {
 		Database projectDB = new Database();
-
+		Scanner sc = new Scanner(System.in);
+		int con=-1;
+		String file;
+		while(true) {
 		// Read file name from user
-        String file = "/Users/Mhz/Downloads/DB/DBExcelImport/students.xlsx";
+		System.out.println("Enter file name: ");
+		 file = sc.nextLine();
+		file= "./"+file+".xlsx";
+
+		
         try {
             ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);
-            GeneralTable table = mapper.map();
+            System.out.println("Enter sheet number: ");
+    	     int n1= sc.nextInt()-1;
+            GeneralTable table = mapper.map(n1);
 
         	System.out.println();
 
@@ -41,6 +50,11 @@ public class DBExcelImport {
 
             projectDB.getTuples(table); 
             System.out.println("---- Done reading from DB ----");
+	    System.out.println("If you want to read anthor file please enter 1 or 0 to end the program ");
+            con = sc.nextInt();
+    		if(con==0)break;
+    		if(con==1) System.out.println("continue reading... ");
+    		String temp= sc.nextLine();
 
 
         } catch (InvalidExcelFileException e) {
@@ -51,6 +65,7 @@ public class DBExcelImport {
             System.out.println("Error occured. Unable to execute mapping.");
             e.printStackTrace();
         }
+		}
 	 }	 
 	 
 }
