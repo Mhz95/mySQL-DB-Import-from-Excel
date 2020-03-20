@@ -2,7 +2,7 @@
 
 #### Steps to run:  
 1- Setup MySQL locally  
-2- Create any table then update line 16 at `Database.java` with your DBNAME  
+2- Create any DB then update line 16 at `Database.java` with your DBNAME  
 ```
             this.conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/DBNAME?user=root&serverTimezone=UTC");
 
