@@ -7,6 +7,7 @@ import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -28,33 +29,83 @@ public class ExcelToObjectMapper {
     }
 
     /**
-     * Read data from Excel file and convert each rows into list of given object of Type T.
-     * @param cls Class of Type T.
-     * @param <T> Generic type T, result will list of type T objects.
-     * @return List of object of type T.
+     * Read data from Excel file and convert each rows into list of object.
+     * @return List of array of objects. list of rows each row of different objects.
      * @throws Exception if failed to generate mapping.
      */
-    public <T> ArrayList<T> map(Class<T> cls) throws Exception {
-        ArrayList<T> list = new ArrayList();
+    public GeneralTable map() throws Exception {
 
         Sheet sheet = workbook.getSheetAt(0);
+        DataFormatter formatter = new DataFormatter();
+
+        // Create New table + Set table Name
+        GeneralTable gtable = new GeneralTable();
+        gtable.setTableName(sheet.getSheetName());
+        
+        // Headers Reading
+        int header = sheet.getFirstRowNum();
+        int lastHeaderCell = sheet.getRow(header).getLastCellNum();
+        String[] headers = new String[(lastHeaderCell)];
+        
+        for (int h=0; h<lastHeaderCell;h++) {
+        	headers[h] = sheet.getRow(header).getCell(h).getStringCellValue();
+            System.out.print(headers[h]  + " ");
+        }
+        System.out.println();
+        gtable.setHeaders(headers);       
+        
+        // Read first row after header to take types
+        int firstRowAfterHeader = header + 1;
+        int lastfirstRowAfterHeaderCell = sheet.getRow(firstRowAfterHeader).getLastCellNum();
+        String[] types = new String[(lastfirstRowAfterHeaderCell )];
+
+        for (int t=0; t<lastHeaderCell;t++) {
+        	types[t] = sheet.getRow(firstRowAfterHeader).getCell(t).getCellType().toString();
+            System.out.print(types[t]  + " ");
+        }
+        System.out.println();
+        gtable.setTypes(types);       
+
+        // Read Rows
+        ArrayList<Object[]> rows = new ArrayList();
+                
         int lastRow = sheet.getLastRowNum();
         for (int i=1; i<=lastRow;i++) {
+            Object[] row = new Object[headers.length];
+
             if (sheet.getRow(i) == null){
-            	break;
+            	continue;
             }
-            Object obj = cls.newInstance();
-            Field[] fields = obj.getClass().getDeclaredFields();
-            for (Field field: fields) {
-                String fieldName = field.getName();
-                int index = getHeaderIndex(fieldName, workbook);
-                Cell cell = sheet.getRow(i).getCell(index);
-                Field classField = obj.getClass().getDeclaredField(fieldName);
-                setObjectFieldValueFromCell(obj, classField, cell);
+            for (int c=0; c<row.length;c++) {
+                Cell cell = sheet.getRow(i).getCell(c);
+                
+              switch(types[c]) {
+              case "STRING":
+            	  row[c] = cell.getStringCellValue();
+              	break;
+              case "NUMERIC":
+            
+              	String str = formatter.formatCellValue(cell);
+              	int intNum;
+              	double doubleNum = Double.parseDouble(str);
+              	if ((doubleNum % 1) == 0) {
+              		intNum = (int) doubleNum;
+              		row[c] = intNum;
+              	} else {
+              		row[c] = doubleNum;
+              	}
+              	
+              	break;
+              default:
+            	  break;
+              }
+                
             }
-            list.add( (T) obj);
+            rows.add(row);
         }
-        return list;
+        gtable.setRows(rows);  
+        return gtable;
+
     }
 
     /**

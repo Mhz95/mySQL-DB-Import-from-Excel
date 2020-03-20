@@ -15,22 +15,31 @@ public class DBExcelImport {
 	 public static void main(String[] args) {
 		Database projectDB = new Database();
 
+		// Read file name from user
         String file = "/Users/Mhz/Downloads/DB/DBExcelImport/students.xlsx";
         try {
             ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);
-            List<Student> students = mapper.map(Student.class);
-            for (Student student : students) {
-                String res = "Name : " + student.getName() + ", Address : " + student.getUniversity() + ", Number : "+ student.getNumber();
-                System.out.println(res);
-                
-                // Add to DB
-                projectDB.addStudents(student); 
+            GeneralTable table = mapper.map();
+
+        	System.out.println();
+
+            for(int n = 0 ; n<table.getRows().size(); n++) {
+            	Object[] r = table.getRows().get(n);
+            	for(int y = 0 ; y<r.length; y++) {
+                  System.out.print(r[y] + " ");
+            	}
+            	System.out.println();
             }
             
-            System.out.println("---- Done reading from excel & writing to DB ----");	
+            System.out.println("---- Done reading from excel ----");	
             
-            projectDB.getStudents(); 
-    		
+            projectDB.createTable(table); 
+            System.out.println("---- Done Create table at DB ----");
+
+            projectDB.addTuples(table); 
+            System.out.println("---- Done Insert rows at DB ----");
+
+            projectDB.getTuples(table); 
             System.out.println("---- Done reading from DB ----");
 
 
