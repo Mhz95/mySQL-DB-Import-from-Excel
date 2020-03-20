@@ -58,6 +58,8 @@ public class ExcelToObjectMapper {
         
         for (int h=0; h<lastHeaderCell;h++) {
         	headers[h] = sheet.getRow(header).getCell(h).getStringCellValue();
+            String s=	headers[h].replace(' ', '_');
+             headers[h]=s;
             System.out.print(headers[h]  + " ");
         }
         System.out.println();
