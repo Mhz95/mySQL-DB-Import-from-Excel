@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Iterator;
 
 
 /**
@@ -21,8 +22,16 @@ public class ExcelToObjectMapper {
     private Workbook workbook;
 
     public ExcelToObjectMapper(String fileUrl) throws IOException, InvalidExcelFileException {
-        try {
+          try {
+        	int count=1;
             workbook = createWorkBook(fileUrl);
+            System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");//
+            Iterator<Sheet> sheetIterator = workbook.sheetIterator();//
+            while (sheetIterator.hasNext()) {
+                Sheet sheet = sheetIterator.next();
+                System.out.println("Sheet "+ count+" :"+ sheet.getSheetName());
+                count++;
+            }
         } catch (InvalidFormatException e) {
             throw new InvalidExcelFileException(e.getMessage());
         }
@@ -33,9 +42,9 @@ public class ExcelToObjectMapper {
      * @return List of array of objects. list of rows each row of different objects.
      * @throws Exception if failed to generate mapping.
      */
-    public GeneralTable map() throws Exception {
+    public GeneralTable map(int n) throws Exception {
 
-        Sheet sheet = workbook.getSheetAt(0);
+        Sheet sheet = workbook.getSheetAt(n);
         DataFormatter formatter = new DataFormatter();
 
         // Create New table + Set table Name
