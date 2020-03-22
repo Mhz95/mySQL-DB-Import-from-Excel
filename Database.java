@@ -13,7 +13,7 @@ public class Database {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             
             // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
-            this.conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/cscdb?user=root&serverTimezone=UTC");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Database1", "root","Alya@mysql16");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -109,7 +109,43 @@ public class Database {
 		}
 				
 	}
-	
+	//Jtable output
+	/*public String[][] getTuples(GeneralTable gtable) {
+		
+		try {
+
+			Statement stmt = this.conn.createStatement();
+
+			ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
+			int totalColumns_rs = rs.getMetaData().getColumnCount();
+			boolean b = rs.last(); 
+			int totalRows_rs = rs.getRow();
+			rs.beforeFirst();
+			
+			String[][]data = new String[totalRows_rs][totalColumns_rs];
+			int j=0;
+			
+			while(rs.next()) {
+				
+				for(int i = 0; i<gtable.getHeaders().length; i++) {
+					data[j][i]=rs.getString((gtable.getHeaders()[i]) );}
+				
+				j++;
+					
+				}
+			return data;	
+			}
+
+		 catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+				
+	}*/
+
+	//original 
 	public void getTuples(GeneralTable gtable) {
 		try {
 
