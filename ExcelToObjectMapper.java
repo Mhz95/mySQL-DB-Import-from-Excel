@@ -113,9 +113,9 @@ public class ExcelToObjectMapper {
               		row[c] = doubleNum;
               	}
 			      
-              	 case "BOOLEAN":
-            	  row[c] = cell.getBooleanCellValue();
-              	break;
+              	 //case "BOOLEAN":
+            	//  row[c] = cell.getBooleanCellValue();
+              	//break;
 			      
               default:
             	  break;
@@ -190,7 +190,7 @@ public class ExcelToObjectMapper {
                 }
             }
         }
-        else if(cls == boolean.class) {
+        /*else if(cls == boolean.class) {
             boolean value = cell.getBooleanCellValue();
             try {
                 field.set(obj, value);
@@ -201,7 +201,7 @@ public class ExcelToObjectMapper {
                     e1.printStackTrace();
                 }
             }
-        }
+        }/
         /*else if(cls == Collection.class) {
             double value = cell.getNumericCellValue();
             try {

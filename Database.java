@@ -4,10 +4,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 public class Database {
 	
 	Connection conn = null;
+
+
 	static Vector data = new Vector();
 	
 	Database() {
@@ -115,85 +118,33 @@ public class Database {
 				
 	}
 	//Jtable output
-	/*public String[][] getTuples(GeneralTable gtable) {
-		
-		try {
 
-			Statement stmt = this.conn.createStatement();
+	public Vector getTableTuples(GeneralTable gtable) {
+	try {
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
-			int totalColumns_rs = rs.getMetaData().getColumnCount();
-			boolean b = rs.last(); 
-			int totalRows_rs = rs.getRow();
-			rs.beforeFirst();
-			
-			String[][]data = new String[totalRows_rs][totalColumns_rs];
-			int j=0;
-			
-			while(rs.next()) {
-				
-				for(int i = 0; i<gtable.getHeaders().length; i++) {
-					data[j][i]=rs.getString((gtable.getHeaders()[i]) );}
-				
-				j++;
-					
-				}
-			return data;	
-			}
+		Statement stmt = this.conn.createStatement();
 
-		 catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
-		}
-		
-				
-	}*/
+		ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
+		ResultSetMetaData metaData = (ResultSetMetaData) rs.getMetaData();
+		int columns = metaData.getColumnCount();
+		data.clear();  
+	    while (rs.next()) {
+	        Vector row = new Vector(columns);
+	        for (int i = 2; i <= columns; i++) {
+	         row.addElement(rs.getObject(i));
+	        }
+	        data.addElement(row);
+	     }
 
-	//original 
-	public void getTuples(GeneralTable gtable) {
-		try {
-
-			Statement stmt = this.conn.createStatement();
-
-			ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
-
-			while(rs.next()) {
-				for(int i = 0; i<gtable.getHeaders().length; i++) {
-					System.out.print(rs.getString(gtable.getHeaders()[i]) + " ");			
-				}
-				System.out.println();
-			}
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-				
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
-		public Vector getTableTuples(GeneralTable gtable) {
-		try {
 
-			Statement stmt = this.conn.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
-			ResultSetMetaData metaData = rs.getMetaData();
-			int columns = metaData.getColumnCount();
-			data.clear();  
-		    while (rs.next()) {
-		        Vector row = new Vector(columns);
-		        for (int i = 2; i <= columns; i++) {
-		         row.addElement(rs.getObject(i));
-		        }
-		        data.addElement(row);
-		     }
+	return data;
 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return data;
-				
-	}
+}
+
 
 }

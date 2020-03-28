@@ -2,6 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TimerTask;
+import java.util.Vector;
+
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
@@ -23,32 +26,30 @@ public class DBExcelImport extends JFrame  {
 		
     static String file;
     static int sheetNo;
-   // static String columns[];
-   // static String data[][];
-   // static DefaultTableModel model = new DefaultTableModel();
-   // static JTable tablle ;
-    //static JScrollPane tableScroller = new JScrollPane( tablle );
+  
     
 	public static void main(String[] args) {
 		
 		Database projectDB = new Database();
 		JFrame frame = new JFrame("Excel Importer");
-		frame.setSize(700, 500); 
+		frame.setSize(600,600); 
         Container container = frame.getContentPane();
         GroupLayout groupLayout = new GroupLayout(container);
         container.setLayout(groupLayout);
         groupLayout.setAutoCreateContainerGaps(true);
         groupLayout.preferredLayoutSize(container);
   
-        JLabel label_1 = new JLabel("Enter The Excel File Directory :");
-        JLabel label_2 = new JLabel("Enter Sheet Number : ");
-        /*JLabel label_3 = new JLabel("---- Done reading from excel ----");
-        JLabel label_4 = new JLabel("---- Done Create table at DB ----");
-        JLabel label_5 = new JLabel("---- Done Insert rows at DB ----");
-        JLabel label_6 = new JLabel("---- Done reading from DB ----");*/
+        JLabel label_1 = new JLabel(" Excel File Directory :");
+        JLabel label_2 = new JLabel(" Sheet Number : ");
+        JLabel label_3 = new JLabel("Done importing table from Excel file");
+        label_3.hide();
+        JLabel label_4 = new JLabel("Done storing the table to the database");
+        label_4.hide();
         JTextField textField_1 = new JTextField();
         JTextField textField_2 = new JTextField();
         JButton button_1 = new JButton("Import");
+        JButton button_2 = new JButton("Clear");
+      
         
         //************************************
         
@@ -61,15 +62,11 @@ public class DBExcelImport extends JFrame  {
             	try {
             	ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);
             	GeneralTable table = mapper.map(sheetNo);
-            	//columns=table.getHeaders();
-            	projectDB.createTable(table);
-            	projectDB.addTuples(table);
-            	projectDB.getTuples(table); 
-            	// To Change Output format in next version 
-            	//data =projectDB.getTuples(table);
-            	//tablle = new JTable(model);
-            	//model.setDataVector(data, columns); 
-            	//*********Table*************************
+            	
+            
+            	//*********excelTable*************************
+
+            	label_3.show(true);
                 JTable table1 = new JTable();
                 DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
                 table1.setModel(model);
@@ -77,12 +74,19 @@ public class DBExcelImport extends JFrame  {
                 model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
                 table1.setModel(model);
                 JScrollPane scroll = new JScrollPane(table1);
-                scroll.setBounds(200, 150, 360, 200);
+                scroll.setBounds(150, 200, 360, 150);
                 table1.setVisible(true); 
                 frame.add(scroll);
+                
               
-              //*********Table*************************
+              //*********excelTable*************************
+                
+                
             	//***********database table*****************
+                label_4.show(true);
+            	projectDB.createTable(table);
+            	projectDB.addTuples(table);
+            	projectDB.getTableTuples(table); 
                 Vector v= projectDB.getTableTuples(table);
                 JTable table2 = new JTable();
                 DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
@@ -91,7 +95,7 @@ public class DBExcelImport extends JFrame  {
                 model2 = new DefaultTableModel(v,mapper.getHeader());
                 table2.setModel(model2);
                 JScrollPane scroll2 = new JScrollPane(table2);
-                scroll2.setBounds(200, 400,360, 200);
+                scroll2.setBounds(150, 400,360, 150);
                 table2.setVisible(true); 
                 frame.add(scroll2);
                 
@@ -112,7 +116,13 @@ public class DBExcelImport extends JFrame  {
         
         //************************************
    
-        
+        button_2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	textField_1.setText("");	
+            	textField_2.setText("");
+            	
+            }});
         
         
         //************************************
@@ -122,24 +132,29 @@ public class DBExcelImport extends JFrame  {
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(label_1)
                     .addComponent(label_2)
-                   
-                )
+                    .addComponent(label_3)
+                    .addComponent(label_4)
+           )
+                
+                
              
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.PREFERRED_SIZE, 20)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                   
-                    .addComponent(textField_1,  GroupLayout.PREFERRED_SIZE,200,360)
-                    .addComponent(textField_2, GroupLayout.PREFERRED_SIZE,200,360)
+                    .addComponent(textField_1,  GroupLayout.DEFAULT_SIZE,200,360)
+                    .addComponent(textField_2, GroupLayout.DEFAULT_SIZE,200,360)
  
                     .addGroup(groupLayout.createSequentialGroup()
                       
-                        .addComponent(button_1, GroupLayout.PREFERRED_SIZE,200,360)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.PREFERRED_SIZE, 20)
+                        .addComponent(button_1, GroupLayout.DEFAULT_SIZE,100,180)
+                        .addComponent(button_2, GroupLayout.DEFAULT_SIZE,100,180)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE,20)
                         
                     )
                 )
               
         );
+
  
         groupLayout.setVerticalGroup(
             groupLayout.createSequentialGroup()
@@ -148,26 +163,44 @@ public class DBExcelImport extends JFrame  {
                     .addComponent(textField_1)
                 )
                 
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.PREFERRED_SIZE, 20)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(label_2)
                     .addComponent(textField_2)
                 )
                 
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.PREFERRED_SIZE, 20)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(button_1)
+                    .addComponent(button_2)
+                  
+                    
                     
                 )
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 40)
+                .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label_3)
+                        
+                      
+                        
+                        
+                    )
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 200)
+                .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label_4)
+                       
+                      
+                        
+                        
+                    )
+
                 
                 
         );
-       
-       // tableScroller.setBounds(200, 150, 360, 400);
-        //frame.add(tableScroller); 
-        frame.setResizable(true);
+
+        
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.pack();
         frame.setVisible(true);
  
     }
