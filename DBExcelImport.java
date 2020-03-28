@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 /**
  * Project to import from excel files to DB
  * 
- * @Author Alya Alshammeri, Munerah H. Alzaidan, Norah Alshahrani
+ * @Author Alya Alshammeri, Munerah H. Alzaidan, Nourah Alshahrani
  * @Instructor Dr. Sofien Gannoni
  * @Course KSU CCIS CSC581 DB
  * @Date March 2020
@@ -82,7 +82,22 @@ public class DBExcelImport extends JFrame  {
                 frame.add(scroll);
               
               //*********Table*************************
-            	
+            	//***********database table*****************
+                Vector v= projectDB.getTableTuples(table);
+                JTable table2 = new JTable();
+                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
+                table2.setModel(model2);
+                table2.setAutoCreateRowSorter(true);
+                model2 = new DefaultTableModel(v,mapper.getHeader());
+                table2.setModel(model2);
+                JScrollPane scroll2 = new JScrollPane(table2);
+                scroll2.setBounds(200, 400,360, 200);
+                table2.setVisible(true); 
+                frame.add(scroll2);
+                
+                
+                
+              //***********database table*****************
             	
             	
             	 } catch (InvalidExcelFileException e1) {
