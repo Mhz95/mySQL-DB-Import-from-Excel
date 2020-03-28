@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 import java.util.Iterator;
 
 
@@ -20,6 +21,8 @@ import java.util.Iterator;
 
 public class ExcelToObjectMapper {
     private Workbook workbook;
+	 static Vector Columns = new Vector();
+	 static Vector data = new Vector();
 
     public ExcelToObjectMapper(String fileUrl) throws IOException, InvalidExcelFileException {
           try {
@@ -52,6 +55,7 @@ public class ExcelToObjectMapper {
         gtable.setTableName(sheet.getSheetName());
         
         // Headers Reading
+        Columns.clear();
         int header = sheet.getFirstRowNum();
         int lastHeaderCell = sheet.getRow(header).getLastCellNum();
         String[] headers = new String[(lastHeaderCell)];
@@ -61,8 +65,10 @@ public class ExcelToObjectMapper {
             String s=	headers[h].replace(' ', '_');
              headers[h]=s;
             System.out.print(headers[h]  + " ");
+            Columns.add(headers[h]);
         }
         System.out.println();
+        
         gtable.setHeaders(headers);       
         
         // Read first row after header to take types
@@ -79,10 +85,11 @@ public class ExcelToObjectMapper {
 
         // Read Rows
         ArrayList<Object[]> rows = new ArrayList();
-                
+        data.clear();       
         int lastRow = sheet.getLastRowNum();
         for (int i=1; i<=lastRow;i++) {
             Object[] row = new Object[headers.length];
+            Vector d = new Vector();
 
             if (sheet.getRow(i) == null){
             	continue;
@@ -110,9 +117,12 @@ public class ExcelToObjectMapper {
               default:
             	  break;
               }
-                
+              d.add(row[c]);  
             }
             rows.add(row);
+            
+            d.add("\n");
+            data.add(d);
         }
         gtable.setRows(rows);  
         return gtable;
@@ -241,6 +251,19 @@ public class ExcelToObjectMapper {
         }
         return index;
     }
+    
+    
+    public Vector getData() {
+    	return data;
+
+    }
+
+    public Vector getHeader() {
+    	return Columns;
+    }
 }
+
+
+
 
 
