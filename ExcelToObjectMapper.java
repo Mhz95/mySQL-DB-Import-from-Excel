@@ -112,8 +112,11 @@ public class ExcelToObjectMapper {
               	} else {
               		row[c] = doubleNum;
               	}
-              	
+			      
+              	 case "BOOLEAN":
+            	  row[c] = cell.getBooleanCellValue();
               	break;
+			      
               default:
             	  break;
               }
