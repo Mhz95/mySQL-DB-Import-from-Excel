@@ -38,6 +38,9 @@ public class Database {
 				case "NUMERIC":
 					query += " NUMERIC";
 					break;
+				case "BOOLEAN":
+					 query += " BOOLEAN";
+	                                 break;
 				default:
 					break;
 				}
