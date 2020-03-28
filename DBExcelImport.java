@@ -33,7 +33,7 @@ public class DBExcelImport extends JFrame  {
 		
 		Database projectDB = new Database();
 		JFrame frame = new JFrame("Excel Importer");
-		frame.setSize(600, 300); 
+		frame.setSize(700, 500); 
         Container container = frame.getContentPane();
         GroupLayout groupLayout = new GroupLayout(container);
         container.setLayout(groupLayout);
@@ -77,12 +77,10 @@ public class DBExcelImport extends JFrame  {
                 model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
                 table1.setModel(model);
                 JScrollPane scroll = new JScrollPane(table1);
-               JFrame f=new JFrame();
-                f.add(scroll);
-                //container.add(scroll);
-                f.setSize(400, 200);
-                f.setResizable(true);
-               f.setVisible(true);
+                scroll.setBounds(200, 150, 360, 200);
+                table1.setVisible(true); 
+                frame.add(scroll);
+              
               //*********Table*************************
             	
             	
@@ -149,9 +147,10 @@ public class DBExcelImport extends JFrame  {
                 
                 
         );
-        //tablle.setVisible(true); 
+       
        // tableScroller.setBounds(200, 150, 360, 400);
         //frame.add(tableScroller); 
+        frame.setResizable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.pack();
         frame.setVisible(true);
