@@ -3,10 +3,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class Database {
 	
 	Connection conn = null;
+	static Vector data = new Vector();
 	
 	Database() {
 		try {
@@ -164,6 +166,30 @@ public class Database {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+				
+	}
+		public Vector getTableTuples(GeneralTable gtable) {
+		try {
+
+			Statement stmt = this.conn.createStatement();
+
+			ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
+			ResultSetMetaData metaData = rs.getMetaData();
+			int columns = metaData.getColumnCount();
+			data.clear();  
+		    while (rs.next()) {
+		        Vector row = new Vector(columns);
+		        for (int i = 2; i <= columns; i++) {
+		         row.addElement(rs.getObject(i));
+		        }
+		        data.addElement(row);
+		     }
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return data;
 				
 	}
 
