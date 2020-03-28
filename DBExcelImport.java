@@ -69,7 +69,21 @@ public class DBExcelImport extends JFrame  {
             	//data =projectDB.getTuples(table);
             	//tablle = new JTable(model);
             	//model.setDataVector(data, columns); 
-            	
+            	//*********Table*************************
+                JTable table1 = new JTable();
+                DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
+                table1.setModel(model);
+                table1.setAutoCreateRowSorter(true);
+                model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
+                table1.setModel(model);
+                JScrollPane scroll = new JScrollPane(table1);
+               JFrame f=new JFrame();
+                f.add(scroll);
+                //container.add(scroll);
+                f.setSize(400, 200);
+                f.setResizable(true);
+               f.setVisible(true);
+              //*********Table*************************
             	
             	
             	
