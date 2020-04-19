@@ -7,6 +7,7 @@ import java.util.Vector;
 
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 import exception.InvalidExcelFileException;
@@ -49,16 +50,32 @@ public class DBExcelImport extends JFrame  {
         JTextField textField_2 = new JTextField();
         JButton button_1 = new JButton("Import");
         JButton button_2 = new JButton("Clear");
-      
+        JButton button_3 = new JButton("Open file");
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("excel table file", "xlsx", "xlsm" );
+        chooser.setFileFilter(filter);
         
         //************************************
+        button_3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	int returnedValue = chooser.showOpenDialog(frame);
+            	if(returnedValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = chooser.getSelectedFile();
+                file = selectedFile.getPath();
+                textField_1.setText(file);}
+            	
+            	
+            }});
         
         button_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	file= textField_1.getText()+".xlsx";
-            	sheetNo=(Integer.valueOf(textField_2.getText()))-1;
-            	
+            	int Sheetnumber=(Integer.valueOf(textField_2.getText()))-1;
+            	if (Sheetnumber>0)
+            	sheetNo=Sheetnumber;
+            	else
+                textField_2.setText("Error :sheet number range is starting from 1 ");	
             	try {
             	ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);
             	GeneralTable table = mapper.map(sheetNo);
@@ -141,13 +158,15 @@ public class DBExcelImport extends JFrame  {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                   
-                    .addComponent(textField_1,  GroupLayout.DEFAULT_SIZE,200,360)
-                    .addComponent(textField_2, GroupLayout.DEFAULT_SIZE,200,360)
+                    .addComponent(textField_1,  GroupLayout.DEFAULT_SIZE,200,420)
+                    .addComponent(textField_2, GroupLayout.DEFAULT_SIZE,200,420)
  
                     .addGroup(groupLayout.createSequentialGroup()
-                      
+                    		
+                        .addComponent(button_3, GroupLayout.DEFAULT_SIZE,100,180)
                         .addComponent(button_1, GroupLayout.DEFAULT_SIZE,100,180)
                         .addComponent(button_2, GroupLayout.DEFAULT_SIZE,100,180)
+                    
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE,20)
                         
                     )
@@ -171,8 +190,10 @@ public class DBExcelImport extends JFrame  {
                 
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(button_1)
+                	.addComponent(button_3)
+                	.addComponent(button_1)
                     .addComponent(button_2)
+                    
                   
                     
                     
