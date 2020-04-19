@@ -71,9 +71,9 @@ public class DBExcelImport extends JFrame  {
         button_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	int Sheetnumber=(Integer.valueOf(textField_2.getText()))-1;
+            	int Sheetnumber=(Integer.valueOf(textField_2.getText()));
             	if (Sheetnumber>0)
-            	sheetNo=Sheetnumber;
+            	sheetNo=Sheetnumber-1;
             	else
                 textField_2.setText("Error :sheet number range is starting from 1 ");	
             	try {
