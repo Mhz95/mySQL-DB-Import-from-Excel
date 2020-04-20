@@ -63,8 +63,11 @@ public class ExcelToObjectMapper {
         for (int h=0; h<lastHeaderCell;h++) {
         	headers[h] = sheet.getRow(header).getCell(h).getStringCellValue();
             String s=	headers[h].replace(' ', '_');
+		s=	headers[h].replace('-', '_');//New
              headers[h]=s;
             System.out.print(headers[h]  + " ");
+		if(headers[h].equals("id"))
+            	 headers[h]= "Data_id";
             Columns.add(headers[h]);
         }
         System.out.println();
@@ -96,7 +99,10 @@ public class ExcelToObjectMapper {
             }
             for (int c=0; c<row.length;c++) {
                 Cell cell = sheet.getRow(i).getCell(c);
-                
+                 if (cell == null) {
+                	row[c] = " NULL";
+                	continue;
+                }
               switch(types[c]) {
               case "STRING":
             	  row[c] = cell.getStringCellValue();
