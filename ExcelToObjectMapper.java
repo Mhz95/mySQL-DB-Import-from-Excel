@@ -23,6 +23,7 @@ public class ExcelToObjectMapper {
     private Workbook workbook;
 	 static Vector Columns = new Vector();
 	 static Vector data = new Vector();
+	public int SheetNumber;
 
     public ExcelToObjectMapper(String fileUrl) throws IOException, InvalidExcelFileException {
           try {
@@ -34,7 +35,9 @@ public class ExcelToObjectMapper {
                 Sheet sheet = sheetIterator.next();
                 System.out.println("Sheet "+ count+" :"+ sheet.getSheetName());
                 count++;
+		    
             }
+		  SheetNumber= count;
         } catch (InvalidFormatException e) {
             throw new InvalidExcelFileException(e.getMessage());
         }
