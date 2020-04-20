@@ -18,7 +18,7 @@ public class Database {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             
             // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Database1", "root","Alya@mysql16");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?root");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
