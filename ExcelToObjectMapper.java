@@ -108,7 +108,8 @@ public class ExcelToObjectMapper {
                 }
               switch(types[c]) {
               case "STRING" :
-            	  row[c] = cell.getStringCellValue();
+            	  String str1 = formatter.formatCellValue(cell);
+            	  row[c] = str1;
               	break;
               case "NUMERIC":
             
