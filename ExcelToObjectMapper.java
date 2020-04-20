@@ -107,7 +107,7 @@ public class ExcelToObjectMapper {
                 	continue;
                 }
               switch(types[c]) {
-              case "STRING":
+              case "STRING" :
             	  row[c] = cell.getStringCellValue();
               	break;
               case "NUMERIC":
