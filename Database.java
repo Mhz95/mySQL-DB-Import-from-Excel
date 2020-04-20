@@ -32,7 +32,29 @@ public class Database {
         }
 	}
 	
+	public void dropTable(GeneralTable gtable) {
+		
+				try {
+
+					Statement stmt = this.conn.createStatement();
+					
+					String query = "DROP TABLE IF EXISTS "+ gtable.getTableName() +";";
+					
+					int rs = stmt.executeUpdate(query);
+					
+
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+	}
+
+	
 	public void createTable(GeneralTable gtable) {
+		
+		dropTable(gtable);
+		
 		try {
 
 			Statement stmt = this.conn.createStatement();
