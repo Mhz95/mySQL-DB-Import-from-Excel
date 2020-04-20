@@ -13,14 +13,22 @@ public class Database {
 
 	static Vector data = new Vector();
 	
-	Database() {
+	Database(String dbName, String userName, String pwd) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-            
-            // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Database1", "root","Alya@mysql16");
+
+                // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
+                if(pwd != "") {
+                    this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName+"&"+pwd);
+                } else {
+                    this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName);
+                }
+
+
         } catch (Exception ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
+        	DBExcelImport.errorconnected = true;
+        	DBExcelImport.logs.setText(ex.getMessage());
         }
 	}
 	

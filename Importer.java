@@ -68,7 +68,7 @@ public class Importer {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		Database projectDB = new Database();
+		//Database projectDB = new Database();
 		Excel_Importer = new JFrame();
 		Excel_Importer.setTitle("Excel Importer Program");
 		Excel_Importer.setBounds(100, 100, 700,650);
@@ -293,17 +293,17 @@ public class Importer {
 					mapper = new ExcelToObjectMapper(file);
 					GeneralTable table = mapper.map(sheetNo);
 					//***********database table*****************
-	            	projectDB.createTable(table);
-	            	projectDB.addTuples(table);
-	            	projectDB.getTableTuples(table);
-	                Vector v= projectDB.getTableTuples(table);
+//	            	projectDB.createTable(table);
+//	            	projectDB.addTuples(table);
+//	            	projectDB.getTableTuples(table);
+//	                Vector v= projectDB.getTableTuples(table);
 	                JTable table2 = new JTable();
-	                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
-	                table2.setModel(model2);
+//	                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
+//	                table2.setModel(model2);
 	                table2.setAutoCreateRowSorter(true);
 	                table2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-	                model2 = new DefaultTableModel(v,mapper.getHeader());
-	                table2.setModel(model2);
+//	                model2 = new DefaultTableModel(v,mapper.getHeader());
+//	                table2.setModel(model2);
 	                scrollPane_1.setViewportView(table2);
 	              
 	             
