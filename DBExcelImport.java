@@ -60,7 +60,7 @@ public class DBExcelImport extends JFrame  {
         textField_1.setText("Click Open file ");
         textField_1.setEditable(false);
         JButton button_1 = new JButton("Import");
-        JButton button_2 = new JButton("Rest");
+        JButton button_2 = new JButton("Reset");
         JButton button_3 = new JButton("Open file");
         JButton button_4 = new JButton("View Data");
         JButton button_5 = new JButton("Clear");
