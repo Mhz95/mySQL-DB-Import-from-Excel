@@ -39,7 +39,7 @@ public class Database {
 			
 			String query = "CREATE TABLE IF NOT EXISTS "+ gtable.getTableName() +" (" + 
 					" id INT AUTO_INCREMENT PRIMARY KEY,";
-			
+			String s="";
 			for(int i = 0; i<gtable.getHeaders().length; i++) {
 				query += " " + gtable.getHeaders()[i];
 				switch(gtable.getTypes()[i]) {
@@ -47,7 +47,15 @@ public class Database {
 					query += " VARCHAR(255)";
 					break;
 				case "NUMERIC":
-					query += " NUMERIC";
+					//query += " NUMERIC";
+					s += gtable.getRows().get(1)[i];
+					//System.out.println("*********** "+s);
+					double doubleNum = Double.parseDouble((String) s);
+	              	if ((doubleNum % 1) == 0)
+	              		query += " NUMERIC";
+	              	else 
+	              		query += " NUMERIC(19, 4)";
+	              	s="";
 					break;
 				case "BOOLEAN":
 					 query += " BOOLEAN";
