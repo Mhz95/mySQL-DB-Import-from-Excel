@@ -29,23 +29,22 @@ import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class Importer {
-	
+
 	static String file;
 	static int sheetNo;
 	private JFrame Excel_Importer;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTable Exceltable;
-	private JTable DBtabel;
-	
+
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -82,21 +81,22 @@ public class Importer {
 		panel.setBorder(new LineBorder(new Color(153, 180, 209), 1, true));
 		panel.setBounds(28, 29, 619, 162);
 		Excel_Importer.getContentPane().add(panel);
-		
+
 		JLabel lblNewLabel = new JLabel("Excel File Directory");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 12));
+
 		JLabel lblSheetNumber = new JLabel("Sheet Number");
-		lblSheetNumber.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		
+		lblSheetNumber.setFont(new Font("Times New Roman", Font.BOLD, 12));
+
 		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		textField.setColumns(10);
 		textField.setText("Click Open file ");
         textField.setEditable(false);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		
+
 		JButton btnOpenFile = new JButton("Open File");
 		btnOpenFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -107,7 +107,7 @@ public class Importer {
                 textField.setText(file);}
 			}
 		});
-		
+
 		JButton btnOpenFile_1 = new JButton("Rest");
 		btnOpenFile_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -151,14 +151,15 @@ public class Importer {
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(SystemColor.activeCaption));
 		panel_1.setBounds(28, 220, 619, 162);
 		Excel_Importer.getContentPane().add(panel_1);
-		
+
 		JButton btnViewData = new JButton("View Data");
-		Exceltable = new JTable();
+		JScrollPane scrollPane_1_1 = new JScrollPane();
+		scrollPane_1_1.setPreferredSize(new Dimension(400, 250));
 		btnViewData.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -208,23 +209,22 @@ public class Importer {
                                 }//End while loop
                             sheetNo=Sheetnumber-1;
                         	GeneralTable table = mapper.map(sheetNo);
-                  //*********excelTable*************************
+               
 
-	            	
-	             
-	                DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
-	                Exceltable.setModel(model);
-	                Exceltable.setAutoCreateRowSorter(true);
-	                Exceltable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-	                model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
-	                Exceltable.setModel(model);
-	                JScrollPane scroll = new JScrollPane(Exceltable);
-	                scroll.setBounds(200, 150, 500, 200);
-	                Exceltable.setVisible(true);
-	              
+                        	 //*********excelTable*************************
 
+        	            	
+        	                JTable table1 = new JTable();
+        	                DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
+        	                table1.setModel(model);
+        	                table1.setAutoCreateRowSorter(true);
+        	                table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        	                model = new DefaultTableModel(mapper.getData(),mapper.getHeader());
+        	                table1.setModel(model);
+        	        		scrollPane_1_1.setViewportView(table1);
+        	          
 
-	              //*********excelTable*************************
+        	        		//*********excelTable*************************
 
 
             	 }
@@ -252,38 +252,38 @@ public class Importer {
 
             }});
 		
-		JScrollBar scrollBar = new JScrollBar();
+
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addGap(24)
 					.addComponent(btnViewData, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
-					.addComponent(Exceltable, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
-					.addGap(152)
-					.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+					.addComponent(scrollPane_1_1, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+					.addGap(28))
 		);
 		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(70)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnViewData)
-						.addComponent(Exceltable, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(61, Short.MAX_VALUE))
-				.addComponent(scrollBar, GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(70)
+							.addComponent(btnViewData))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(scrollPane_1_1, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(gl_panel_1);
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(SystemColor.activeCaption));
 		panel_2.setBounds(28, 405, 619, 162);
 		Excel_Importer.getContentPane().add(panel_2);
-		
 		JButton btnImportData = new JButton("Import Data");
-		
-		DBtabel = new JTable();
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setPreferredSize(new Dimension(400,250));
 		btnImportData.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -293,26 +293,22 @@ public class Importer {
 					mapper = new ExcelToObjectMapper(file);
 					GeneralTable table = mapper.map(sheetNo);
 					//***********database table*****************
-	                
 	            	projectDB.createTable(table);
 	            	projectDB.addTuples(table);
 	            	projectDB.getTableTuples(table);
 	                Vector v= projectDB.getTableTuples(table);
-	            
+	                JTable table2 = new JTable();
 	                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
-	                DBtabel.setModel(model2);
-	                DBtabel.setAutoCreateRowSorter(true);
-	                DBtabel.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+	                table2.setModel(model2);
+	                table2.setAutoCreateRowSorter(true);
+	                table2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 	                model2 = new DefaultTableModel(v,mapper.getHeader());
-	                DBtabel.setModel(model2);
-	                JScrollPane scroll2 = new JScrollPane(DBtabel);
-	                scroll2.setBounds(200, 400,500, 200);
-	                DBtabel.setVisible(true);
+	                table2.setModel(model2);
+	                scrollPane_1.setViewportView(table2);
+	              
 	             
-
-
-
 	              //***********database table*****************
+			
 				}  catch (Exception e1) {
                     System.out.println("Error occured. Unable to execute mapping.");
                    // JPanel panel = new JPanel();
@@ -325,28 +321,27 @@ public class Importer {
 
             }});
 		
-		JScrollBar scrollBar_1 = new JScrollBar();
+
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(27)
+					.addGap(34)
 					.addComponent(btnImportData)
-					.addPreferredGap(ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
-					.addComponent(DBtabel, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
-					.addGap(145)
-					.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+					.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(24))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(67)
-							.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnImportData)
-								.addComponent(DBtabel, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
+							.addGap(69)
+							.addComponent(btnImportData))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
