@@ -255,10 +255,10 @@ public class DBExcelImport extends JFrame {
 
 								if (!errorconnected) {
 									logs.setText("Connected Successfully!");
+									readFileBtn.setEnabled(true);
 								}
 							}
 
-							readFileBtn.setEnabled(true);
 
 						} catch (Exception e1) {
 							logs.setText(e1.getMessage());
