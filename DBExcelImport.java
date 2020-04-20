@@ -77,12 +77,23 @@ public class DBExcelImport extends JFrame  {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-            	int Sheetnumber=(Integer.valueOf(textField_2.getText()));
-            	if (Sheetnumber>0)
+            int Sheetnumber;
+                while(true) {
+            	Sheetnumber=(Integer.valueOf(textField_2.getText()));
+            	if (Sheetnumber>0) {
             	sheetNo=Sheetnumber-1;
-            	else
-                textField_2.setText("Error :sheet number range is starting from 1 ");
-            	
+            	break;
+            	}
+            	//else
+            	if(Sheetnumber==0) {
+            		JOptionPane.showMessageDialog(null, 
+                            "Error: Sheet number range is starting from 1", 
+                            "Error: MESSAGE", 
+                            JOptionPane.WARNING_MESSAGE);
+            		}
+            	textField_2.setText("");
+            	Sheetnumber=(Integer.valueOf(textField_2.getText()));
+                }//End while loop
             	
             		
             		
@@ -90,6 +101,29 @@ public class DBExcelImport extends JFrame  {
             		
             	try {
             	ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);
+			int count = mapper.SheetNumber;
+            		
+                    while(sheetNo >count) {
+                    	if(sheetNo >count) {
+                    		JOptionPane.showMessageDialog(null, 
+                                    "Error: The file contines only :" +count +" Sheets", 
+                                    "Error: MESSAGE", 
+                                    JOptionPane.WARNING_MESSAGE);
+                    		}
+                    	else if (Sheetnumber==0) {
+                    		JOptionPane.showMessageDialog(null, 
+                    				"Error: Sheet number range is starting from 1", 
+                                    "Error: MESSAGE", 
+                                    JOptionPane.WARNING_MESSAGE);
+                    	}
+                       else 
+                    	break;
+                    		
+                    	textField_2.setText("");
+                    	Sheetnumber=(Integer.valueOf(textField_2.getText()));
+                    	
+                        }//End while loop
+                    sheetNo=Sheetnumber-1;
             	GeneralTable table = mapper.map(sheetNo);
             	
             	
@@ -146,8 +180,8 @@ public class DBExcelImport extends JFrame  {
                      JOptionPane.showMessageDialog(panel, "File not found.", "Error", JOptionPane.ERROR_MESSAGE);
                  } catch (Exception e1) {
                      System.out.println("Error occured. Unable to execute mapping.");
-                     JPanel panel = new JPanel();
-                     JOptionPane.showMessageDialog(panel," Uncorrect sheet number", "Error", JOptionPane.ERROR_MESSAGE);
+                    // JPanel panel = new JPanel();
+                    // JOptionPane.showMessageDialog(panel," Uncorrect sheet number", "Error", JOptionPane.ERROR_MESSAGE);
                      
                      e1.printStackTrace();
                  }
