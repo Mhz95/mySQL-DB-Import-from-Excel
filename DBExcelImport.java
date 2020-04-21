@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.List;
 import java.awt.event.*;
 import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 import javax.swing.*;
@@ -9,10 +11,13 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 import exception.InvalidExcelFileException;
 
@@ -36,6 +41,8 @@ public class DBExcelImport extends JFrame {
 	/**
 	 * GUI Components
 	 */
+	JTabbedPane pane;
+	JTabbedPane paneT;
 	JButton importBtn;
 	JButton connect;
 	JButton viewBtn;
@@ -58,9 +65,6 @@ public class DBExcelImport extends JFrame {
 	JPasswordField pwdTxt;
 	JFileChooser chooser;
 	JTable excelTable;
-	JTable dbTable;
-	JScrollPane scrollDBTable;
-	JScrollPane scrollExcelTable;
 	JComboBox<String> sheetNumCb;
 	static JTextArea logs;
 	static boolean errorconnected = false;
@@ -125,9 +129,7 @@ public class DBExcelImport extends JFrame {
 		sheetNumCb = new JComboBox<String>();
 		sheetNumCb.setEnabled(false);
 		excelTable = new JTable();
-		dbTable = new JTable();
 
-		
 		add(dbNameLbl);
 		add(dbNameTxt);
 		add(userNameLbl);
@@ -158,7 +160,6 @@ public class DBExcelImport extends JFrame {
 		 * 
 		 * @param (x,y,width,height)
 		 */
-		
 
 		dbNameLbl.setBounds(500, 10, 100, 40);
 		dbNameTxt.setBounds(500, 40, 100, 30);
@@ -299,34 +300,49 @@ public class DBExcelImport extends JFrame {
 
 						try {
 							int temp;
+
 							if (sheetNumCb.getSelectedItem().toString().equals("All")) {
 								temp = numberOfSheets;
+
 							} else {
 								temp = 1;
 							}
-							for (int y = 0; y < temp; y++) {
+							paneT = new JTabbedPane(JTabbedPane.TOP);
+							TableModel model = new DefaultTableModel();
+							for (int t = 0; t < temp; t++) {
+								GeneralTable table = new GeneralTable();
 								if (!sheetNumCb.getSelectedItem().toString().equals("All")) {
 									int selectedSheet = sheetNumCb.getSelectedIndex();
-									GeneralTable table = mapper.map(selectedSheet);
-									logs.setText("Preview excel table for sheet: " + (selectedSheet + 1) + "\n");
+									table = mapper.map(selectedSheet);
+									model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
+									logs.setText(
+											"Preview excel table for sheet: " + (selectedSheet + 1) + "\n");
 								} else {
-									GeneralTable table = mapper.map(y);
-									logs.setText("Preview excel table for sheet: " + (y + 1) + "\n");
-								}
+									table = mapper.map(t);
+									logs.setText("Preview excel table for sheet: " + (t + 1) + "\n");
+									model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
 
-								DefaultTableModel model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
+								}
+								
+								JTable excelTable = new JTable();
 								excelTable.setModel(model);
 								excelTable.setAutoCreateRowSorter(true);
 								excelTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-								model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
-								excelTable.setModel(model);
-								scrollExcelTable = new JScrollPane(excelTable);
-
+		
+								JScrollPane scrollExcelTable = new JScrollPane(excelTable);
 								scrollExcelTable.setBounds(30, 45, 400, 200);
 								excelTable.setVisible(true);
-								add(scrollExcelTable);
+
+								paneT.add(scrollExcelTable, "Sheet" + t);
+								paneT.revalidate();
+								paneT.repaint();
 
 							}
+
+							add(paneT);
+
+							paneT.setBounds(30, 45, 400, 200);
+							paneT.setVisible(true);
 
 							progressBar.setVisible(false);
 
@@ -344,6 +360,8 @@ public class DBExcelImport extends JFrame {
 							JPanel panel = new JPanel();
 							JOptionPane.showMessageDialog(panel, "Rows are empty (Null).", "Error",
 									JOptionPane.ERROR_MESSAGE);
+							e1.printStackTrace();
+
 						} catch (Exception e1) {
 							System.out.println("Error occured. Unable to execute mapping.");
 							// JPanel panel = new JPanel();
@@ -376,23 +394,23 @@ public class DBExcelImport extends JFrame {
 						progressBar.setVisible(true);
 
 						try {
-							
 
 							int temp2;
 
 							if (sheetNumCb.getSelectedItem().toString().equals("All")) {
 								temp2 = numberOfSheets;
-								 
+
 							} else {
 								temp2 = 1;
 							}
-							JTabbedPane pane = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
+							 pane = new JTabbedPane(JTabbedPane.TOP);
 							for (int n = 0; n < temp2; n++) {
 								GeneralTable table2;
 								if (!sheetNumCb.getSelectedItem().toString().equals("All")) {
 									int selectedSheet = sheetNumCb.getSelectedIndex();
 									table2 = mapper.map(selectedSheet);
-									logs.setText("Preview imported to DB table for sheet: " + (selectedSheet + 1) + "\n");
+									logs.setText(
+											"Preview imported to DB table for sheet: " + (selectedSheet + 1) + "\n");
 								} else {
 									table2 = mapper.map(n);
 									logs.setText("Preview imported to DB table for sheet: " + (n + 1) + "\n");
@@ -401,25 +419,27 @@ public class DBExcelImport extends JFrame {
 								projectDB.createTable(table2);
 								projectDB.addTuples(table2);
 								projectDB.getTableTuples(table2);
-								Vector v = projectDB.getTableTuples(table2);
+								ResultSet rs = projectDB.getTableTuples(table2);
 
-								DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
+								DefaultTableModel model2 = buildTableModel(rs);
+								JTable dbTable = new JTable();
 								dbTable.setModel(model2);
 								dbTable.setAutoCreateRowSorter(true);
 								dbTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-								model2 = new DefaultTableModel(v, mapper.getHeader());
-								dbTable.setModel(model2);
-								scrollDBTable = new JScrollPane(dbTable);
+		
+								JScrollPane scrollDBTable = new JScrollPane(dbTable);
 								scrollDBTable.setBounds(30, 275, 400, 200);
 								dbTable.setVisible(true);
 
-						        pane.add( scrollDBTable , "Sheet"+n );
+								pane.add(scrollDBTable, "Sheet" + n);
+								pane.revalidate();
+								pane.repaint();
 
 							}
 
 							add(pane);
-
 							pane.setBounds(30, 275, 400, 200);
+							pane.setVisible(true);
 
 
 							progressBar.setVisible(false);
@@ -441,7 +461,31 @@ public class DBExcelImport extends JFrame {
 
 	}
 
-	
+	public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
+
+		ResultSetMetaData metaData = (ResultSetMetaData) rs.getMetaData();
+
+		// names of columns
+		Vector<String> columnNames = new Vector<String>();
+		int columnCount = metaData.getColumnCount();
+		for (int column = 1; column <= columnCount; column++) {
+			columnNames.add(metaData.getColumnName(column));
+		}
+
+		// data of the table
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+		while (rs.next()) {
+			Vector<Object> vector = new Vector<Object>();
+			for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+				vector.add(rs.getObject(columnIndex));
+			}
+			data.add(vector);
+		}
+
+		return new DefaultTableModel(data, columnNames);
+
+	}
+
 	/**
 	 * Reset All
 	 */
@@ -452,11 +496,13 @@ public class DBExcelImport extends JFrame {
 		viewBtn.setEnabled(false);
 		importBtn.setEnabled(false);
 		clear.setEnabled(false);
-		if (scrollExcelTable != null) {
-			scrollExcelTable.setVisible(false);
+		if (pane != null) {
+			pane.setVisible(false);
+			pane.removeAll();
 		}
-		if (scrollDBTable != null) {
-			scrollDBTable.setVisible(false);
+		if (paneT != null) {
+			paneT.setVisible(false);
+			paneT.removeAll();
 		}
 		connect.setEnabled(true);
 

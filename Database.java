@@ -153,22 +153,24 @@ public class Database {
 	}
 	//Jtable output
 
-	public Vector getTableTuples(GeneralTable gtable) {
+	public ResultSet getTableTuples(GeneralTable gtable) {
 	try {
 
 		Statement stmt = this.conn.createStatement();
 
 		ResultSet rs = stmt.executeQuery("SELECT * FROM "+ gtable.getTableName() +";");
-		ResultSetMetaData metaData = (ResultSetMetaData) rs.getMetaData();
-		int columns = metaData.getColumnCount();
-		data.clear();  
-	    while (rs.next()) {
-	        Vector row = new Vector(columns);
-	        for (int i = 2; i <= columns; i++) {
-	         row.addElement(rs.getObject(i));
-	        }
-	        data.addElement(row);
-	     }
+//		ResultSetMetaData metaData = (ResultSetMetaData) rs.getMetaData();
+//		int columns = metaData.getColumnCount();
+//		data.clear();  
+//	    while (rs.next()) {
+//	        Vector row = new Vector(columns);
+//        	System.out.println(columns);
+//	        for (int i = 2; i <= columns; i++) {
+//	         row.addElement(rs.getObject(i));
+//	        }
+//	        data.addElement(row);
+//	     }
+		return rs;
 
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -176,7 +178,7 @@ public class Database {
 	}
 
 
-	return data;
+	return null;
 
 }
 
