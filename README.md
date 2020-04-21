@@ -1,11 +1,17 @@
 ## Project 581 : DB import from excel + GUI
 
 #### Steps to run:  
-1- Setup MySQL locally  
-2- Create any DB then update line 16 at `Database.java` with your DBNAME  
-```
-this.conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/DBNAME?user=root&serverTimezone=UTC");
+1- Choose your Excel File.  
+2- Determine sheet number you want to import or select all sheets.  
+3- View data before import it to database.  
+4- Choose Import data to store data to database.
 
-```
-3- Use any excel sheet as input by updating path to excel sheet at line 19 at `DBExcelImport.java`  
-4- run `DBExcelImport.java` if you see excel content at console then it works fine !   
+
+ 
+#### System Features:  
+- Easy to connect to different databases.  
+- It can read different file formats like CSV and XLSX.  
+- The software is able to read all sheets in a given Excel File.  
+- Handles different types of data.  
+- Has a Simple GUI.  
+- Usability and understandability.  
