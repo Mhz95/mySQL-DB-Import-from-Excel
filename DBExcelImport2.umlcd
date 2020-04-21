@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_D9iaUINPEeqU8ug8FhpaNA">
+  <modelElement href="DBExcelImport2.uml#_EPBy9YNPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXCfcINPEeqU8ug8FhpaNA" targetItem="_EXDGgINPEeqU8ug8FhpaNA" sourceItem="_EXB4YINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXHX8YNPEeqU8ug8FhpaNA" targetItem="_EXM3nINPEeqU8ug8FhpaNA" sourceItem="_EXHX8INPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXH_AYNPEeqU8ug8FhpaNA" targetItem="_EXM3ooNPEeqU8ug8FhpaNA" sourceItem="_EXH_AINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXH_A4NPEeqU8ug8FhpaNA" targetItem="_EXM3qINPEeqU8ug8FhpaNA" sourceItem="_EXH_AoNPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXLCUINPEeqU8ug8FhpaNA" source="_EXM3gINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETbKwYNPEeqU8ug8FhpaNA"/>
+    <stereotypes xmi:id="_EXLCUYNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETbx0INPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXLCUoNPEeqU8ug8FhpaNA" text=""/>
+    <sourceRole xmi:id="_EXLCU4NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETbKwoNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXLCVINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXLCVYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXLCVoNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="Excel_Importer" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETO9gINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXLCV4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXLCWINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXLpYINPEeqU8ug8FhpaNA" source="_EXM3gINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETbx0YNPEeqU8ug8FhpaNA"/>
+    <stereotypes xmi:id="_EXLpYYNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETcY4INPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXLpYoNPEeqU8ug8FhpaNA" text=""/>
+    <sourceRole xmi:id="_EXLpY4NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETbx0oNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXLpZINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXLpZYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXLpZoNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="textField" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETO9goNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXLpZ4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXLpaINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXMQcINPEeqU8ug8FhpaNA" source="_EXM3gINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETcY4YNPEeqU8ug8FhpaNA"/>
+    <stereotypes xmi:id="_EXMQcYNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETcY44NPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXMQcoNPEeqU8ug8FhpaNA" text=""/>
+    <sourceRole xmi:id="_EXMQc4NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETcY4oNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXMQdINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXMQdYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXMQdoNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="textField_1" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETPkkYNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXMQd4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXMQeINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXUzUINPEeqU8ug8FhpaNA" source="_EXUzWYNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETajtINPEeqU8ug8FhpaNA"/>
+    <stereotypes xmi:id="_EXUzUYNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETbKwINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXUzUoNPEeqU8ug8FhpaNA" text=""/>
+    <sourceRole xmi:id="_EXUzU4NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETajtYNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXUzVINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXUzVYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXUzVoNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="rows" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETMhQ4NPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXUzV4NPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXUzWINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXekUINPEeqU8ug8FhpaNA" targetItem="_EXkq8INPEeqU8ug8FhpaNA" sourceItem="_EXcIEINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXfLYYNPEeqU8ug8FhpaNA" targetItem="_EXkrEINPEeqU8ug8FhpaNA" sourceItem="_EXfLYINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXfycYNPEeqU8ug8FhpaNA" targetItem="_EXkrGINPEeqU8ug8FhpaNA" sourceItem="_EXfycINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXgZgYNPEeqU8ug8FhpaNA" targetItem="_EXkrKoNPEeqU8ug8FhpaNA" sourceItem="_EXgZgINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_EXhAkYNPEeqU8ug8FhpaNA" targetItem="_EXkrNoNPEeqU8ug8FhpaNA" sourceItem="_EXhAkINPEeqU8ug8FhpaNA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXjc0INPEeqU8ug8FhpaNA" sourceAnchor="374.0,276.0" targetAnchor="74.0,91.0" target="_eJ8GsINYEeqU8ug8FhpaNA" source="_EXkq8INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETZVkYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_eJ-i9INYEeqU8ug8FhpaNA" position="-694.0,-14.0"/>
+    <stereotypes xmi:id="_EXjc0YNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETZ8oINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXjc0oNPEeqU8ug8FhpaNA" text="">
+      <visualProperties xmi:id="_hwA1gINYEeqU8ug8FhpaNA" position="-33.0,-14.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_EXjc04NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETZVkoNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwAOcINYEeqU8ug8FhpaNA" position="6.0,16.0"/>
+      <visibility xmi:id="_EXjc1INPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXjc1YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXjc1oNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="workbook" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETI24YNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwA1gYNYEeqU8ug8FhpaNA" position="-84.0,-72.0"/>
+      <visibility xmi:id="_EXjc14NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXjc2INPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXkD4INPEeqU8ug8FhpaNA" sourceAnchor="358.0,276.0" targetAnchor="46.0,64.0" target="_eJ-i8INYEeqU8ug8FhpaNA" source="_EXkq8INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETZ8oYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_eJ_KAINYEeqU8ug8FhpaNA" position="-661.0,18.0"/>
+    <stereotypes xmi:id="_EXkD4YNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETajsINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXkD4oNPEeqU8ug8FhpaNA" text="">
+      <visualProperties xmi:id="_hwCDoINYEeqU8ug8FhpaNA" position="-33.0,-14.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_EXkD44NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETZ8ooNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwBckINYEeqU8ug8FhpaNA" position="2.0,18.0"/>
+      <visibility xmi:id="_EXkD5INPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkD5YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXkD5oNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="Columns" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETJd8YNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwCDoYNYEeqU8ug8FhpaNA" position="-74.0,-73.0"/>
+      <visibility xmi:id="_EXkD54NPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXkD6INPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXkD6YNPEeqU8ug8FhpaNA" sourceAnchor="358.0,276.0" targetAnchor="46.0,64.0" target="_eJ-i8INYEeqU8ug8FhpaNA" source="_EXkq8INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETajsYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_eJ_KAYNYEeqU8ug8FhpaNA" position="-661.0,18.0"/>
+    <stereotypes xmi:id="_EXkD6oNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETajs4NPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EXkD64NPEeqU8ug8FhpaNA" text="">
+      <visualProperties xmi:id="_hwCqsYNYEeqU8ug8FhpaNA" position="-33.0,-14.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_EXkD7INPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETajsoNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwCqsINYEeqU8ug8FhpaNA" position="2.0,18.0"/>
+      <visibility xmi:id="_EXkD7YNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkD7oNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EXkD74NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="data" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETKFAYNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwDRwINYEeqU8ug8FhpaNA" position="-57.0,-73.00000000000001"/>
+      <visibility xmi:id="_EXkD8INPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXkD8YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EXzUcINPEeqU8ug8FhpaNA" sourceAnchor="0.0,77.0" targetAnchor="67.0,32.0" target="_eJ-i8INYEeqU8ug8FhpaNA" source="_EX2-0INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETYugYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_f_SewINYEeqU8ug8FhpaNA" position="1817.0,24.0"/>
+    <stereotypes xmi:id="_EX1JooNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETZVkINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EX0ikINPEeqU8ug8FhpaNA" text="">
+      <visualProperties xmi:id="_hwD40INYEeqU8ug8FhpaNA" position="-33.0,-13.000000000000043"/>
+    </nameVisual>
+    <sourceRole xmi:id="_EX1JoINPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETYugoNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwDRwYNYEeqU8ug8FhpaNA" position="-68.0,-28.000000000000014"/>
+      <visibility xmi:id="_EX1JpINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EX1Jo4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EX1JoYNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="data" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETIP0oNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwEf4INYEeqU8ug8FhpaNA" position="14.0,-26.999999999999304"/>
+      <visibility xmi:id="_EX1JpoNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EX1JpYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_EX2XwINPEeqU8ug8FhpaNA" sourceAnchor="209.0,0.0" targetAnchor="53.0,91.0" target="_hpbFUINYEeqU8ug8FhpaNA" source="_EX2-0INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETYHcINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_hpbsYINYEeqU8ug8FhpaNA" position="1817.0,-240.0"/>
+    <stereotypes xmi:id="_EX2XwYNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ETYugINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_EX2XwoNPEeqU8ug8FhpaNA" text="">
+      <visualProperties xmi:id="_hwFG8INYEeqU8ug8FhpaNA" position="-48.0,-42.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_EX2Xw4NPEeqU8ug8FhpaNA" aggregationKind="NONE" name="">
+      <modelElement href="DBExcelImport2.uml#_ETYHcYNPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwEf4YNYEeqU8ug8FhpaNA" position="-19.0,-66.0"/>
+      <visibility xmi:id="_EX2XxINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EX2XxYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_EX2XxoNPEeqU8ug8FhpaNA" aggregationKind="NONE" name="conn" navigable="true">
+      <modelElement href="DBExcelImport2.uml#_ETHow4NPEeqU8ug8FhpaNA"/>
+      <visualProperties xmi:id="_hwFG8YNYEeqU8ug8FhpaNA" position="2.0,1.0"/>
+      <visibility xmi:id="_EX2Xx4NPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EX2XyINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXB4YINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXCfcINPEeqU8ug8FhpaNA" text="Project to import from excel files to DB&#xD;&#xA; *&#xD;&#xA;@Author Alya Alshammeri, Munerah H. Alzaidan, Nourah Alshahrani&#xD;&#xA;@Instructor Dr. Sofien Gannoni&#xD;&#xA;@Course KSU CCIS CSC581 DB&#xD;&#xA;@Date March 2020" item="_EXDGgINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVEIINPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXHX8INPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXHX8YNPEeqU8ug8FhpaNA" text="Launch the application." item="_EXM3nINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrNYNPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXH_AINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXH_AYNPEeqU8ug8FhpaNA" text="Create the application." item="_EXM3ooNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrNoNPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXH_AoNPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXH_A4NPEeqU8ug8FhpaNA" text="Initialize the contents of the frame." item="_EXM3qINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrN4NPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXcIEINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXekUINPEeqU8ug8FhpaNA" text="A simple Excel to Object mapper utility using Apache POI.&#xD;&#xA;This class provides utility methods, to read an Excel file and convert each rows of&#xD;&#xA;the excel file into appropriate model object as specified and return all rows of excel&#xD;&#xA;file as list of given object type." item="_EXkq8INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrMINPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXfLYINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXfLYYNPEeqU8ug8FhpaNA" text="Read data from Excel file and convert each rows into list of object.&#xD;&#xA;     * @return List of array of objects. list of rows each row of different objects.&#xD;&#xA;     * @throws Exception if failed to generate mapping." item="_EXkrEINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrMYNPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXfycINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXfycYNPEeqU8ug8FhpaNA" text="Create Apache POI @{@link Workbook} for given excel file.&#xD;&#xA;     * @param file&#xD;&#xA;     * @return&#xD;&#xA;     * @throws IOException&#xD;&#xA;     * @throws InvalidFormatException" item="_EXkrGINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrM4NPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXgZgINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXgZgYNPEeqU8ug8FhpaNA" text="Read value from Cell and set it to given field of given object.&#xD;&#xA;     * Note: supported data Type: String, Date, int, long, float, double and boolean.&#xD;&#xA;     * @param obj Object whom given field belong.&#xD;&#xA;     * @param field Field which value need to be set.&#xD;&#xA;     * @param cell Apache POI cell from which value needs to be retrived." item="_EXkrKoNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrMoNPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_EXhAkINPEeqU8ug8FhpaNA" sourceConnectionVisual="_EXhAkYNPEeqU8ug8FhpaNA" text="Read first row/header of Excel file, match given header name and return its index.&#xD;&#xA;     * @param headerName&#xD;&#xA;     * @param workbook&#xD;&#xA;     * @return Index number of header name.&#xD;&#xA;     * @throws InvalidObjectFieldNameException" item="_EXkrNoNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ETVrNINPEeqU8ug8FhpaNA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXDGgINPEeqU8ug8FhpaNA" comments="_EXB4YINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXCfcINPEeqU8ug8FhpaNA" name="DBExcelImport">
+    <modelElement href="DBExcelImport2.uml#_EPvkoINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXDGgYNPEeqU8ug8FhpaNA" position="30.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EXDGgoNPEeqU8ug8FhpaNA" label="+"/>
+    <attributes xmi:id="_EXDGg4NPEeqU8ug8FhpaNA" name="file" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETGaoINPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXDGhINPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETHowINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXDGhYNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXDGhoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXDGh4NPEeqU8ug8FhpaNA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXDGiINPEeqU8ug8FhpaNA" name="sheetNo" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETHowYNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXDGiYNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETHowoNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXDGioNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXDGi4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXDGjINPEeqU8ug8FhpaNA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EXDGjYNPEeqU8ug8FhpaNA" name="main" staticOperation="true">
+      <modelElement href="DBExcelImport2.uml#_EPzPAINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXDGjoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXDGj4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXDGkINPEeqU8ug8FhpaNA" name="args">
+        <modelElement href="DBExcelImport2.uml#_EPz2EINPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXDGkYNPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_EXDGkoNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXM3gINPEeqU8ug8FhpaNA" name="Importer" associationsOut="_EXLCUINPEeqU8ug8FhpaNA _EXLpYINPEeqU8ug8FhpaNA _EXMQcINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_EQPT4INPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXM3gYNPEeqU8ug8FhpaNA" position="-306.0,-110.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EXM3goNPEeqU8ug8FhpaNA" label="+"/>
+    <attributes xmi:id="_EXM3g4NPEeqU8ug8FhpaNA" name="file" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETNvYYNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXM3hINPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETOWcINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXM3hYNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXM3hoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXM3h4NPEeqU8ug8FhpaNA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXM3iINPEeqU8ug8FhpaNA" name="sheetNo" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETOWcYNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXM3iYNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETOWcoNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXM3ioNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXM3i4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXM3jINPEeqU8ug8FhpaNA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXM3jYNPEeqU8ug8FhpaNA" name="Excel_Importer">
+      <modelElement href="DBExcelImport2.uml#_ETO9gINPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXM3joNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETO9gYNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXM3j4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXM3kINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXM3kYNPEeqU8ug8FhpaNA" name="JFrame">
+        <modelElement href="DBExcelImport2.uml#_ESmEUYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXM3koNPEeqU8ug8FhpaNA" name="textField">
+      <modelElement href="DBExcelImport2.uml#_ETO9goNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXM3k4NPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETPkkINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXM3lINPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXM3lYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXM3loNPEeqU8ug8FhpaNA" name="JTextField">
+        <modelElement href="DBExcelImport2.uml#_ESsK8INPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXM3l4NPEeqU8ug8FhpaNA" name="textField_1">
+      <modelElement href="DBExcelImport2.uml#_ETPkkYNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXM3mINPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETQLoINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXM3mYNPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXM3moNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXM3m4NPEeqU8ug8FhpaNA" name="JTextField">
+        <modelElement href="DBExcelImport2.uml#_ESsK8INPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EXM3nINPEeqU8ug8FhpaNA" comments="_EXHX8INPEeqU8ug8FhpaNA" targetConnectionVisual="_EXHX8YNPEeqU8ug8FhpaNA" name="main" staticOperation="true">
+      <modelElement href="DBExcelImport2.uml#_EQRJEINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXM3nYNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXM3noNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXM3n4NPEeqU8ug8FhpaNA" name="args">
+        <modelElement href="DBExcelImport2.uml#_EQRwIINPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXM3oINPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_EXM3oYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXM3ooNPEeqU8ug8FhpaNA" comments="_EXH_AINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXH_AYNPEeqU8ug8FhpaNA" name="Importer">
+      <modelElement href="DBExcelImport2.uml#_EQSXMINPEeqU8ug8FhpaNA"/>
+      <keywords xmi:id="_EXM3o4NPEeqU8ug8FhpaNA" keyword="create"/>
+      <visibility xmi:id="_EXM3pINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXM3pYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXM3poNPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQS-QoNPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXM3p4NPEeqU8ug8FhpaNA" name="Importer">
+          <modelElement href="DBExcelImport2.uml#_EQPT4INPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXM3qINPEeqU8ug8FhpaNA" comments="_EXH_AoNPEeqU8ug8FhpaNA" targetConnectionVisual="_EXH_A4NPEeqU8ug8FhpaNA" name="initialize">
+      <modelElement href="DBExcelImport2.uml#_EQS-Q4NPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXM3qYNPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXM3qoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXUzWYNPEeqU8ug8FhpaNA" name="GeneralTable" associationsOut="_EXUzUINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_EQEUwINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXUzWoNPEeqU8ug8FhpaNA" position="328.0,-222.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EXUzW4NPEeqU8ug8FhpaNA" label="+"/>
+    <attributes xmi:id="_EXUzXINPEeqU8ug8FhpaNA" name="tableName">
+      <modelElement href="DBExcelImport2.uml#_ETLTIINPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXUzXYNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETLTIYNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXUzXoNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXUzX4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXUzYINPEeqU8ug8FhpaNA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXUzYYNPEeqU8ug8FhpaNA" name="headers">
+      <modelElement href="DBExcelImport2.uml#_ETLTIoNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXUzYoNPEeqU8ug8FhpaNA" name="Array">
+        <modelElement href="DBExcelImport2.uml#_ETL6MYNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EXUzY4NPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETL6MoNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXUzZINPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXUzZYNPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_EXUzZoNPEeqU8ug8FhpaNA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXUzZ4NPEeqU8ug8FhpaNA" name="types">
+      <modelElement href="DBExcelImport2.uml#_ETL6M4NPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXUzaINPEeqU8ug8FhpaNA" name="Array">
+        <modelElement href="DBExcelImport2.uml#_ETMhQYNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EXUzaYNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETMhQoNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXVaYINPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXVaYYNPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_EXVaYoNPEeqU8ug8FhpaNA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXVaY4NPEeqU8ug8FhpaNA" name="rows">
+      <modelElement href="DBExcelImport2.uml#_ETMhQ4NPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXVaZINPEeqU8ug8FhpaNA" name="Generics">
+        <modelElement href="DBExcelImport2.uml#_ETNIUINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_EXVaZYNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETNvYINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXVaZoNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXVaZ4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXVaaINPEeqU8ug8FhpaNA" name="List">
+        <modelElement href="DBExcelImport2.uml#_ESKmgYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EXVaaYNPEeqU8ug8FhpaNA" name="getTableName">
+      <modelElement href="DBExcelImport2.uml#_EQH_IINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXVaaoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVaa4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXVabINPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQH_IYNPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXVabYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXVaboNPEeqU8ug8FhpaNA" name="setTableName">
+      <modelElement href="DBExcelImport2.uml#_EQImMINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXVab4NPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVacINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXVacYNPEeqU8ug8FhpaNA" name="tableName">
+        <modelElement href="DBExcelImport2.uml#_EQImMYNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXVacoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXVac4NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXVadINPEeqU8ug8FhpaNA" name="getHeaders">
+      <modelElement href="DBExcelImport2.uml#_EQImMoNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXVadYNPEeqU8ug8FhpaNA" name="Array">
+        <modelElement href="DBExcelImport2.uml#_EQJNQINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXVadoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVad4NPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_EXVaeINPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQImM4NPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXVaeYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXVaeoNPEeqU8ug8FhpaNA" name="setHeaders">
+      <modelElement href="DBExcelImport2.uml#_EQKbYINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXVae4NPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVafINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXVafYNPEeqU8ug8FhpaNA" name="headers">
+        <modelElement href="DBExcelImport2.uml#_EQKbYYNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXVafoNPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_EXVaf4NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXVagINPEeqU8ug8FhpaNA" name="getTypes">
+      <modelElement href="DBExcelImport2.uml#_EQKbY4NPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXVagYNPEeqU8ug8FhpaNA" name="Array">
+        <modelElement href="DBExcelImport2.uml#_EQLCcoNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXVagoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVag4NPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+      <outParameters xmi:id="_EXVahINPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQLCcINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXVahYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXVahoNPEeqU8ug8FhpaNA" name="setTypes">
+      <modelElement href="DBExcelImport2.uml#_EQLpgINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXVah4NPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVaiINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXVaiYNPEeqU8ug8FhpaNA" name="types">
+        <modelElement href="DBExcelImport2.uml#_EQLpgYNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXVaioNPEeqU8ug8FhpaNA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_EXVai4NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXVajINPEeqU8ug8FhpaNA" name="getRows">
+      <modelElement href="DBExcelImport2.uml#_EQLpg4NPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXVajYNPEeqU8ug8FhpaNA" name="Generics">
+        <modelElement href="DBExcelImport2.uml#_EQM3oINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXVajoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXVaj4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXVakINPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ETBiIINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXVakYNPEeqU8ug8FhpaNA" name="List">
+          <modelElement href="DBExcelImport2.uml#_ESKmgYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXVakoNPEeqU8ug8FhpaNA" name="setRows">
+      <modelElement href="DBExcelImport2.uml#_ETBiIYNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXVak4NPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXValINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXValYNPEeqU8ug8FhpaNA" name="rows">
+        <modelElement href="DBExcelImport2.uml#_ETBiIoNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXValoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXVal4NPEeqU8ug8FhpaNA" name="List">
+          <modelElement href="DBExcelImport2.uml#_ESKmgYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXqxkINPEeqU8ug8FhpaNA" name="IOException">
+    <modelElement href="DBExcelImport2.uml#_ESJ_cYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXqxkYNPEeqU8ug8FhpaNA" position="733.0,102.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_EXqxkoNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ESKmgINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_EXqxk4NPEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXt04INPEeqU8ug8FhpaNA" name="InvalidExcelFileException">
+    <modelElement href="DBExcelImport2.uml#_EQUMYINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXt04YNPEeqU8ug8FhpaNA" position="932.0,93.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EXt04oNPEeqU8ug8FhpaNA" label="+"/>
+    <operations xmi:id="_EXt044NPEeqU8ug8FhpaNA" name="InvalidExcelFileException">
+      <modelElement href="DBExcelImport2.uml#_EQWooINPEeqU8ug8FhpaNA"/>
+      <keywords xmi:id="_EXt05INPEeqU8ug8FhpaNA" keyword="create"/>
+      <visibility xmi:id="_EXt05YNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXt05oNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXt054NPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQWopINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXt06INPEeqU8ug8FhpaNA" name="InvalidExcelFileException">
+          <modelElement href="DBExcelImport2.uml#_EQUMYINPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EXt06YNPEeqU8ug8FhpaNA" name="msg">
+        <modelElement href="DBExcelImport2.uml#_EQWooYNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXt06oNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXt064NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXvqEINPEeqU8ug8FhpaNA" name="Exception">
+    <modelElement href="DBExcelImport2.uml#_ES7bgINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXvqEYNPEeqU8ug8FhpaNA" position="-1156.0,102.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_EXvqEoNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ES8CkINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_EXvqE4NPEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXxfQINPEeqU8ug8FhpaNA" name="InvalidFormatException">
+    <modelElement href="DBExcelImport2.uml#_ESaeIINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXxfQYNPEeqU8ug8FhpaNA" position="-1437.0,102.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_EXxfQoNPEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ESbFMINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_EXxfQ4NPEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EX73UINPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException">
+    <modelElement href="DBExcelImport2.uml#_EQX2wINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EX73UYNPEeqU8ug8FhpaNA" position="-2250.0,93.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EX73UoNPEeqU8ug8FhpaNA" label="+"/>
+    <operations xmi:id="_EX73U4NPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException">
+      <modelElement href="DBExcelImport2.uml#_EQYd0INPEeqU8ug8FhpaNA"/>
+      <keywords xmi:id="_EX73VINPEeqU8ug8FhpaNA" keyword="create"/>
+      <visibility xmi:id="_EX73VYNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EYIEkINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EYIEkYNPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EQZE4oNPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EYIEkoNPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException">
+          <modelElement href="DBExcelImport2.uml#_EQX2wINPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EYIEk4NPEeqU8ug8FhpaNA" name="msg">
+        <modelElement href="DBExcelImport2.uml#_EQYd0YNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EYIElINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EYIElYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_eJ8GsINYEeqU8ug8FhpaNA" name="Workbook" associationsIn="_EXjc0INPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ES5mUYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_eJ8GsYNYEeqU8ug8FhpaNA" position="-694.0,-14.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_eJ8GsoNYEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ES60cINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_eJ8Gs4NYEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EXkq8INPEeqU8ug8FhpaNA" comments="_EXcIEINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXekUINPEeqU8ug8FhpaNA" name="ExcelToObjectMapper" associationsOut="_EXjc0INPEeqU8ug8FhpaNA _EXkD4INPEeqU8ug8FhpaNA _EXkD6YNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_EP7K0INPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EXkq8YNPEeqU8ug8FhpaNA" position="-991.0,-194.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EXkq8oNPEeqU8ug8FhpaNA" label="+"/>
+    <attributes xmi:id="_EXkq84NPEeqU8ug8FhpaNA" name="workbook">
+      <modelElement href="DBExcelImport2.uml#_ETI24YNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXkq9INPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETJd8INPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXkq9YNPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXkq9oNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXkq94NPEeqU8ug8FhpaNA" name="Workbook">
+        <modelElement href="DBExcelImport2.uml#_ES5mUYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXkq-INPEeqU8ug8FhpaNA" defaultValue="new Vector()" name="Columns" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETJd8YNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXkq-YNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETKFAINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXkq-oNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXkq-4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXkq_INPEeqU8ug8FhpaNA" name="Vector">
+        <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXkq_YNPEeqU8ug8FhpaNA" defaultValue="new Vector()" name="data" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETKFAYNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXkq_oNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETKFA4NPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXkq_4NPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EXkrAINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXkrAYNPEeqU8ug8FhpaNA" name="Vector">
+        <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EXkrAoNPEeqU8ug8FhpaNA" name="SheetNumber">
+      <modelElement href="DBExcelImport2.uml#_ETKFBINPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EXkrA4NPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETKsEINPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EXkrBINPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkrBYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EXkrBoNPEeqU8ug8FhpaNA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EXkrB4NPEeqU8ug8FhpaNA" name="ExcelToObjectMapper">
+      <modelElement href="DBExcelImport2.uml#_EP9AAINPEeqU8ug8FhpaNA"/>
+      <keywords xmi:id="_EXkrCINPEeqU8ug8FhpaNA" keyword="create"/>
+      <visibility xmi:id="_EXkrCYNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkrCoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrC4NPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EP9nE4NPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrDINPEeqU8ug8FhpaNA" name="ExcelToObjectMapper">
+          <modelElement href="DBExcelImport2.uml#_EP7K0INPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EXkrDYNPEeqU8ug8FhpaNA" name="fileUrl">
+        <modelElement href="DBExcelImport2.uml#_EP9nEINPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrDoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrD4NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXkrEINPEeqU8ug8FhpaNA" comments="_EXfLYINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXfLYYNPEeqU8ug8FhpaNA" name="map">
+      <modelElement href="DBExcelImport2.uml#_EP-OIINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrEYNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkrEoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrE4NPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ESfWoINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrFINPEeqU8ug8FhpaNA" name="GeneralTable">
+          <modelElement href="DBExcelImport2.uml#_EQEUwINPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EXkrFYNPEeqU8ug8FhpaNA" name="n">
+        <modelElement href="DBExcelImport2.uml#_EP-1MINPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrFoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrF4NPEeqU8ug8FhpaNA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXkrGINPEeqU8ug8FhpaNA" comments="_EXfycINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXfycYNPEeqU8ug8FhpaNA" name="createWorkBook">
+      <modelElement href="DBExcelImport2.uml#_EP_cQINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrGYNPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXkrGoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrG4NPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ES_F4INPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrHINPEeqU8ug8FhpaNA" name="Workbook">
+          <modelElement href="DBExcelImport2.uml#_ES5mUYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EXkrHYNPEeqU8ug8FhpaNA" name="file">
+        <modelElement href="DBExcelImport2.uml#_EQADUINPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrHoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrH4NPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXkrIINPEeqU8ug8FhpaNA" name="getData">
+      <modelElement href="DBExcelImport2.uml#_EQAqYINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrIYNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkrIoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrI4NPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ES_s9INPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrJINPEeqU8ug8FhpaNA" name="Vector">
+          <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXkrJYNPEeqU8ug8FhpaNA" name="getHeader">
+      <modelElement href="DBExcelImport2.uml#_EQBRcINPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrJoNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EXkrJ4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrKINPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ETAUAINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrKYNPEeqU8ug8FhpaNA" name="Vector">
+          <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EXkrKoNPEeqU8ug8FhpaNA" comments="_EXgZgINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXgZgYNPEeqU8ug8FhpaNA" name="setObjectFieldValueFromCell">
+      <modelElement href="DBExcelImport2.uml#_ES-e0YNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrK4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXkrLINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EXkrLYNPEeqU8ug8FhpaNA" name="obj">
+        <modelElement href="DBExcelImport2.uml#_ES-e0oNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrLoNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrL4NPEeqU8ug8FhpaNA" name="Object">
+          <modelElement href="DBExcelImport2.uml#_ES8poINPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_EXkrMINPEeqU8ug8FhpaNA" name="field">
+        <modelElement href="DBExcelImport2.uml#_ES-e04NPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrMYNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrMoNPEeqU8ug8FhpaNA" name="Field">
+          <modelElement href="DBExcelImport2.uml#_ESbFMYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_EXkrM4NPEeqU8ug8FhpaNA" name="cell">
+        <modelElement href="DBExcelImport2.uml#_ES-e1INPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrNINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrNYNPEeqU8ug8FhpaNA" name="Cell">
+          <modelElement href="DBExcelImport2.uml#_ES9QsYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EXkrNoNPEeqU8ug8FhpaNA" comments="_EXhAkINPEeqU8ug8FhpaNA" targetConnectionVisual="_EXhAkYNPEeqU8ug8FhpaNA" name="getHeaderIndex">
+      <modelElement href="DBExcelImport2.uml#_ES_s8INPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EXkrN4NPEeqU8ug8FhpaNA" label="-"/>
+      <cardinality xmi:id="_EXkrOINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EXkrOYNPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ES_s84NPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EXkrOoNPEeqU8ug8FhpaNA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EXkrO4NPEeqU8ug8FhpaNA" name="headerName">
+        <modelElement href="DBExcelImport2.uml#_ES_s8YNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrPINPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrPYNPEeqU8ug8FhpaNA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_EXkrPoNPEeqU8ug8FhpaNA" name="workbook">
+        <modelElement href="DBExcelImport2.uml#_ES_s8oNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EXkrP4NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EXkrQINPEeqU8ug8FhpaNA" name="Workbook">
+          <modelElement href="DBExcelImport2.uml#_ES5mUYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_eJ-i8INYEeqU8ug8FhpaNA" name="Vector" associationsIn="_EXzUcINPEeqU8ug8FhpaNA _EXkD4INPEeqU8ug8FhpaNA _EXkD6YNPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_eJ-i8YNYEeqU8ug8FhpaNA" position="-694.0,-14.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_eJ-i8oNYEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ESNp0INPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_eJ-i84NYEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_EX2-0INPEeqU8ug8FhpaNA" name="Database" associationsOut="_EXzUcINPEeqU8ug8FhpaNA _EX2XwINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_EP1EMINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_EX2-0YNPEeqU8ug8FhpaNA" position="1608.0,-54.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_EX2-0oNPEeqU8ug8FhpaNA" label="+"/>
+    <attributes xmi:id="_EX2-04NPEeqU8ug8FhpaNA" defaultValue="null" name="conn">
+      <modelElement href="DBExcelImport2.uml#_ETHow4NPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EX2-1INPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETIP0YNPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EX2-1YNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EX2-1oNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EX2-14NPEeqU8ug8FhpaNA" name="Connection">
+        <modelElement href="DBExcelImport2.uml#_ESSiUINPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_EX2-2INPEeqU8ug8FhpaNA" defaultValue="new Vector()" name="data" staticAttribute="true">
+      <modelElement href="DBExcelImport2.uml#_ETIP0oNPEeqU8ug8FhpaNA"/>
+      <stereotypes xmi:id="_EX2-2YNPEeqU8ug8FhpaNA" name="LegacyStyledElement">
+        <modelElement href="DBExcelImport2.uml#_ETI24INPEeqU8ug8FhpaNA"/>
+      </stereotypes>
+      <visibility xmi:id="_EX2-2oNPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EX2-24NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <type xmi:id="_EX2-3INPEeqU8ug8FhpaNA" name="Vector">
+        <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_EX2-3YNPEeqU8ug8FhpaNA" name="Database">
+      <modelElement href="DBExcelImport2.uml#_EP3gcINPEeqU8ug8FhpaNA"/>
+      <keywords xmi:id="_EX2-3oNPEeqU8ug8FhpaNA" keyword="create"/>
+      <visibility xmi:id="_EX2-34NPEeqU8ug8FhpaNA" label="~"/>
+      <cardinality xmi:id="_EX2-4INPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EX2-4YNPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_EP4HgoNPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EX2-4oNPEeqU8ug8FhpaNA" name="Database">
+          <modelElement href="DBExcelImport2.uml#_EP1EMINPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_EX2-44NPEeqU8ug8FhpaNA" name="createTable">
+      <modelElement href="DBExcelImport2.uml#_ESYB4INPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EX2-5INPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EX2-5YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EX2-5oNPEeqU8ug8FhpaNA" name="gtable">
+        <modelElement href="DBExcelImport2.uml#_ESYB4YNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EX2-54NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EX2-6INPEeqU8ug8FhpaNA" name="GeneralTable">
+          <modelElement href="DBExcelImport2.uml#_EQEUwINPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EX2-6YNPEeqU8ug8FhpaNA" name="addTuples">
+      <modelElement href="DBExcelImport2.uml#_ESYo8INPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EX2-6oNPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EX2-64NPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_EX2-7INPEeqU8ug8FhpaNA" name="gtable">
+        <modelElement href="DBExcelImport2.uml#_ESYo8YNPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EX2-7YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EX2-7oNPEeqU8ug8FhpaNA" name="GeneralTable">
+          <modelElement href="DBExcelImport2.uml#_EQEUwINPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_EX2-74NPEeqU8ug8FhpaNA" name="getTableTuples">
+      <modelElement href="DBExcelImport2.uml#_ESYo8oNPEeqU8ug8FhpaNA"/>
+      <visibility xmi:id="_EX2-8INPEeqU8ug8FhpaNA" label="+"/>
+      <cardinality xmi:id="_EX2-8YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_EX2-8oNPEeqU8ug8FhpaNA">
+        <modelElement href="DBExcelImport2.uml#_ES5mUINPEeqU8ug8FhpaNA"/>
+        <type xmi:id="_EX2-84NPEeqU8ug8FhpaNA" name="Vector">
+          <modelElement href="DBExcelImport2.uml#_ESNCwYNPEeqU8ug8FhpaNA"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_EX2-9INPEeqU8ug8FhpaNA" name="gtable">
+        <modelElement href="DBExcelImport2.uml#_ESYo84NPEeqU8ug8FhpaNA"/>
+        <cardinality xmi:id="_EX2-9YNPEeqU8ug8FhpaNA" label="1" max="1" min="1"/>
+        <type xmi:id="_EX2-9oNPEeqU8ug8FhpaNA" name="GeneralTable">
+          <modelElement href="DBExcelImport2.uml#_EQEUwINPEeqU8ug8FhpaNA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_hpbFUINYEeqU8ug8FhpaNA" name="Connection" associationsIn="_EX2XwINPEeqU8ug8FhpaNA">
+    <modelElement href="DBExcelImport2.uml#_ESSiUINPEeqU8ug8FhpaNA"/>
+    <visualProperties xmi:id="_hpbFUYNYEeqU8ug8FhpaNA" position="1764.0,-285.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_hpbFUoNYEeqU8ug8FhpaNA" name="Reference">
+      <modelElement href="DBExcelImport2.uml#_ESTwcINPEeqU8ug8FhpaNA"/>
+    </stereotypes>
+    <visibility xmi:id="_hpbFU4NYEeqU8ug8FhpaNA" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

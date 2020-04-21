@@ -1,0 +1,1570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_D7iPMINPEeqU8ug8FhpaNA" name="DBExcelImport2">
+    <eAnnotations xmi:id="_EEvOgINPEeqU8ug8FhpaNA" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_EEzf8INPEeqU8ug8FhpaNA" source="codegen">
+        <details xmi:id="_EEzf8YNPEeqU8ug8FhpaNA" key="codegenDirectory" value="/DBExcelImport"/>
+        <details xmi:id="_EW7xwINPEeqU8ug8FhpaNA" key="AssociatedSourceCode" value="/DBExcelImport/DBExcelImport.java;3688911103/1;/DBExcelImport/Database.java;684889694/1;/DBExcelImport/ExcelToObjectMapper.java;2775880727/1;/DBExcelImport/GeneralTable.java;1824263954/1;/DBExcelImport/Importer.java;1576070154/1;/DBExcelImport/exception/InvalidExcelFileException.java;2186280009/1;/DBExcelImport/exception/InvalidObjectFieldNameException.java;895477796/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_EO-IkINPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_EO-voINPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_EO-voYNPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_EO-vooNPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_EO_WsINPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_EO_WsYNPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_EO_WsoNPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_EO_Ws4NPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_EO_WtINPEeqU8ug8FhpaNA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_EO_WtYNPEeqU8ug8FhpaNA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_EO_WtoNPEeqU8ug8FhpaNA" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESFuAINPEeqU8ug8FhpaNA" name="File"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESJYYYNPEeqU8ug8FhpaNA" name="FileNotFoundException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESJ_cYNPEeqU8ug8FhpaNA" name="IOException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPBL4INPEeqU8ug8FhpaNA" name="util">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ESKmgYNPEeqU8ug8FhpaNA" name="List"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESLNkYNPEeqU8ug8FhpaNA" name="Scanner"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESMbsYNPEeqU8ug8FhpaNA" name="TimerTask"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESNCwYNPEeqU8ug8FhpaNA" name="Vector"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESbsQYNPEeqU8ug8FhpaNA" name="ArrayList"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_ESdhcYNPEeqU8ug8FhpaNA" name="Date"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ESeIgYNPEeqU8ug8FhpaNA" name="Iterator"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPBy9oNPEeqU8ug8FhpaNA" name="awt">
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPBy94NPEeqU8ug8FhpaNA" name="event">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESQtIYNPEeqU8ug8FhpaNA" name="ActionEvent"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_ESRUMYNPEeqU8ug8FhpaNA" name="ActionListener"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESQGEYNPEeqU8ug8FhpaNA" name="Frame"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESkPIINPEeqU8ug8FhpaNA" name="EventQueue"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESrj4YNPEeqU8ug8FhpaNA" name="Font"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESxqgINPEeqU8ug8FhpaNA" name="SystemColor"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESyRkINPEeqU8ug8FhpaNA" name="Color"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESy4oYNPEeqU8ug8FhpaNA" name="Dimension"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPHSgINPEeqU8ug8FhpaNA" name="sql">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ESSiUINPEeqU8ug8FhpaNA" name="Connection"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESTwcYNPEeqU8ug8FhpaNA" name="DriverManager"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ESU-kYNPEeqU8ug8FhpaNA" name="ResultSet"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESVloYNPEeqU8ug8FhpaNA" name="SQLException"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ESWMsYNPEeqU8ug8FhpaNA" name="Statement"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPNZIINPEeqU8ug8FhpaNA" name="lang">
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPOAMINPEeqU8ug8FhpaNA" name="reflect">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESbFMYNPEeqU8ug8FhpaNA" name="Field"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ES7bgINPEeqU8ug8FhpaNA" name="Exception"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ES8poINPEeqU8ug8FhpaNA" name="Object"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ETD-YINPEeqU8ug8FhpaNA" name="RuntimeException"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_EPBy8INPEeqU8ug8FhpaNA" name="javax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPBy8YNPEeqU8ug8FhpaNA" name="swing">
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPBy8oNPEeqU8ug8FhpaNA" name="UIManager">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESNp0YNPEeqU8ug8FhpaNA" name="LookAndFeelInfo"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPBy84NPEeqU8ug8FhpaNA" name="filechooser">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESOQ4YNPEeqU8ug8FhpaNA" name="FileNameExtensionFilter"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPBy9INPEeqU8ug8FhpaNA" name="table">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESO38YNPEeqU8ug8FhpaNA" name="DefaultTableModel"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPcCoINPEeqU8ug8FhpaNA" name="GroupLayout">
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_ESogkYNPEeqU8ug8FhpaNA" name="Alignment"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPcpsINPEeqU8ug8FhpaNA" name="LayoutStyle">
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_ESq80YNPEeqU8ug8FhpaNA" name="ComponentPlacement"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPdQwINPEeqU8ug8FhpaNA" name="border">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ESwcYYNPEeqU8ug8FhpaNA" name="LineBorder"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESmEUYNPEeqU8ug8FhpaNA" name="JFrame"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESmrYYNPEeqU8ug8FhpaNA" name="JPanel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESnScYNPEeqU8ug8FhpaNA" name="BoxLayout"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESn5gYNPEeqU8ug8FhpaNA" name="GroupLayout"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESpusYNPEeqU8ug8FhpaNA" name="JLabel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESqVwYNPEeqU8ug8FhpaNA" name="JOptionPane"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESsK8INPEeqU8ug8FhpaNA" name="JTextField"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESsyAYNPEeqU8ug8FhpaNA" name="JButton"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESuAIYNPEeqU8ug8FhpaNA" name="JFileChooser"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESunMYNPEeqU8ug8FhpaNA" name="JTable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESvOQYNPEeqU8ug8FhpaNA" name="JScrollBar"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ESv1UYNPEeqU8ug8FhpaNA" name="JScrollPane"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_EPBy9YNPEeqU8ug8FhpaNA" name="exception">
+      <packagedElement xmi:type="uml:Class" xmi:id="_EQUMYINPEeqU8ug8FhpaNA" name="InvalidExcelFileException">
+        <generalization xmi:id="_ETElcYNPEeqU8ug8FhpaNA" general="_ETD-YINPEeqU8ug8FhpaNA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETUdFoNPEeqU8ug8FhpaNA" name="InvalidExcelFileException" specification="_EQWooINPEeqU8ug8FhpaNA">
+          <ownedParameter xmi:id="_ETUdF4NPEeqU8ug8FhpaNA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ETUdGINPEeqU8ug8FhpaNA" type="_EQUMYINPEeqU8ug8FhpaNA" direction="return"/>
+          <language>java</language>
+          <body>super(msg);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_EQWooINPEeqU8ug8FhpaNA" name="InvalidExcelFileException" method="_ETUdFoNPEeqU8ug8FhpaNA">
+          <eAnnotations xmi:id="_EQWoooNPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_EQWoo4NPEeqU8ug8FhpaNA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_EQWooYNPEeqU8ug8FhpaNA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_EQWopINPEeqU8ug8FhpaNA" type="_EQUMYINPEeqU8ug8FhpaNA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_EQX2wINPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException">
+        <generalization xmi:id="_ETFMgINPEeqU8ug8FhpaNA" general="_ETD-YINPEeqU8ug8FhpaNA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETUdGYNPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException" specification="_EQYd0INPEeqU8ug8FhpaNA">
+          <ownedParameter xmi:id="_ETUdGoNPEeqU8ug8FhpaNA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ETUdG4NPEeqU8ug8FhpaNA" type="_EQX2wINPEeqU8ug8FhpaNA" direction="return"/>
+          <language>java</language>
+          <body>super(msg);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_EQYd0INPEeqU8ug8FhpaNA" name="InvalidObjectFieldNameException" method="_ETUdGYNPEeqU8ug8FhpaNA">
+          <eAnnotations xmi:id="_EQZE4INPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_EQZE4YNPEeqU8ug8FhpaNA" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_EQYd0YNPEeqU8ug8FhpaNA" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_EQZE4oNPEeqU8ug8FhpaNA" type="_EQX2wINPEeqU8ug8FhpaNA" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_EPH5kINPEeqU8ug8FhpaNA" name="com">
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPH5kYNPEeqU8ug8FhpaNA" name="mysql">
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPIgoINPEeqU8ug8FhpaNA" name="cj">
+          <packagedElement xmi:type="uml:Package" xmi:id="_EPIgoYNPEeqU8ug8FhpaNA" name="jdbc">
+            <packagedElement xmi:type="uml:Package" xmi:id="_EPIgooNPEeqU8ug8FhpaNA" name="result">
+              <packagedElement xmi:type="uml:Class" xmi:id="_ESWzwYNPEeqU8ug8FhpaNA" name="ResultSetMetaData"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_EPKV0INPEeqU8ug8FhpaNA" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_EPKV0YNPEeqU8ug8FhpaNA" name="apache">
+        <packagedElement xmi:type="uml:Package" xmi:id="_EPKV0oNPEeqU8ug8FhpaNA" name="poi">
+          <packagedElement xmi:type="uml:Package" xmi:id="_EPKV04NPEeqU8ug8FhpaNA" name="openxml4j">
+            <packagedElement xmi:type="uml:Package" xmi:id="_EPKV1INPEeqU8ug8FhpaNA" name="exceptions">
+              <packagedElement xmi:type="uml:Class" xmi:id="_ESaeIINPEeqU8ug8FhpaNA" name="InvalidFormatException"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_EPMyEINPEeqU8ug8FhpaNA" name="ss">
+            <packagedElement xmi:type="uml:Package" xmi:id="_EPMyEYNPEeqU8ug8FhpaNA" name="usermodel">
+              <packagedElement xmi:type="uml:Interface" xmi:id="_ES5mUYNPEeqU8ug8FhpaNA" name="Workbook"/>
+              <packagedElement xmi:type="uml:Interface" xmi:id="_ES9QsYNPEeqU8ug8FhpaNA" name="Cell"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPvkoINPEeqU8ug8FhpaNA" name="DBExcelImport">
+      <ownedComment xmi:id="_ETVEIINPEeqU8ug8FhpaNA">
+        <body>Project to import from excel files to DB&#xD;
+ *&#xD;
+@Author Alya Alshammeri, Munerah H. Alzaidan, Nourah Alshahrani&#xD;
+@Instructor Dr. Sofien Gannoni&#xD;
+@Course KSU CCIS CSC581 DB&#xD;
+@Date March 2020</body>
+      </ownedComment>
+      <generalization xmi:id="_ES4YMINPEeqU8ug8FhpaNA" general="_ESmEUYNPEeqU8ug8FhpaNA"/>
+      <ownedAttribute xmi:id="_ETGaoINPEeqU8ug8FhpaNA" name="file" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETHowYNPEeqU8ug8FhpaNA" name="sheetNo" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETQysINPEeqU8ug8FhpaNA" name="main" specification="_EPzPAINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETQysYNPEeqU8ug8FhpaNA" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETQysoNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>Database projectDB = new Database();&#xD;
+		JFrame frame = new JFrame(&quot;Excel Importer&quot;);&#xD;
+&#xD;
+		frame.setSize(1000,700);&#xD;
+     Container container = frame.getContentPane();&#xD;
+     GroupLayout groupLayout1 = new GroupLayout(container);&#xD;
+     container.setLayout(groupLayout1);&#xD;
+     groupLayout1.setAutoCreateContainerGaps(true);&#xD;
+     groupLayout1.preferredLayoutSize(container);&#xD;
+     GroupLayout groupLayout2 = new GroupLayout(container);&#xD;
+&#xD;
+&#xD;
+     JLabel label_1 = new JLabel(&quot; Excel File Directory :&quot;);&#xD;
+     JLabel label_2 = new JLabel(&quot; Sheet Number : &quot;);&#xD;
+     JLabel label_3 = new JLabel(&quot;Done importing table from Excel file&quot;);&#xD;
+     label_3.hide();&#xD;
+     JLabel label_4 = new JLabel(&quot;Done storing the table to the database&quot;);&#xD;
+     label_4.hide();&#xD;
+     JTextField textField_1 = new JTextField();&#xD;
+     JTextField textField_2 = new JTextField();&#xD;
+     textField_1.setText(&quot;Click Open file &quot;);&#xD;
+     textField_1.setEditable(false);&#xD;
+     JButton button_1 = new JButton(&quot;Import&quot;);&#xD;
+     JButton button_2 = new JButton(&quot;Reset&quot;);&#xD;
+     JButton button_3 = new JButton(&quot;Open file&quot;);&#xD;
+     JButton button_4 = new JButton(&quot;View Data&quot;);&#xD;
+     JButton button_5 = new JButton(&quot;Clear&quot;);&#xD;
+     JFileChooser chooser = new JFileChooser();&#xD;
+     FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;excel table file&quot;, &quot;xlsx&quot;, &quot;xlsm&quot; );&#xD;
+     chooser.setFileFilter(filter);&#xD;
+&#xD;
+     //************************************&#xD;
+     button_3.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+         	int returnedValue = chooser.showOpenDialog(frame);&#xD;
+         	if(returnedValue == JFileChooser.APPROVE_OPTION) {&#xD;
+             File selectedFile = chooser.getSelectedFile();&#xD;
+             file = selectedFile.getPath();&#xD;
+             textField_1.setText(file);&#xD;
+&#xD;
+         	}&#xD;
+ }});&#xD;
+     //View data&#xD;
+     button_4.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+&#xD;
+         int Sheetnumber;&#xD;
+             while(true) {&#xD;
+         	Sheetnumber=(Integer.valueOf(textField_2.getText()));&#xD;
+         	if (Sheetnumber>0) {&#xD;
+         	sheetNo=Sheetnumber-1;&#xD;
+&#xD;
+         	break;&#xD;
+         	}&#xD;
+         	//else&#xD;
+         	if(Sheetnumber==0) {&#xD;
+         		JOptionPane.showMessageDialog(null,&#xD;
+                         &quot;Error: Sheet number range is starting from 1&quot;,&#xD;
+                         &quot;Error: MESSAGE&quot;,&#xD;
+                         JOptionPane.WARNING_MESSAGE);&#xD;
+         		}&#xD;
+         	textField_2.setText(&quot;&quot;);&#xD;
+         	Sheetnumber=(Integer.valueOf(textField_2.getText()));&#xD;
+             }//End while loop&#xD;
+&#xD;
+         	try {&#xD;
+         		ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);&#xD;
+     			int count = mapper.SheetNumber;&#xD;
+&#xD;
+                         while(sheetNo >count) {&#xD;
+                         	if(sheetNo >count) {&#xD;
+                         		JOptionPane.showMessageDialog(null,&#xD;
+                                         &quot;Error: The file contines only :&quot; +count +&quot; Sheets&quot;,&#xD;
+                                         &quot;Error: MESSAGE&quot;,&#xD;
+                                         JOptionPane.WARNING_MESSAGE);&#xD;
+                         		}&#xD;
+                         	else if (Sheetnumber==0) {&#xD;
+                         		JOptionPane.showMessageDialog(null,&#xD;
+                         				&quot;Error: Sheet number range is starting from 1&quot;,&#xD;
+                                         &quot;Error: MESSAGE&quot;,&#xD;
+                                         JOptionPane.WARNING_MESSAGE);&#xD;
+                         	}&#xD;
+                            else&#xD;
+                         	break;&#xD;
+&#xD;
+                         	textField_2.setText(&quot;&quot;);&#xD;
+                         	Sheetnumber=(Integer.valueOf(textField_2.getText()));&#xD;
+&#xD;
+                             }//End while loop&#xD;
+                         sheetNo=Sheetnumber-1;&#xD;
+                     	GeneralTable table = mapper.map(sheetNo);&#xD;
+               //*********excelTable*************************&#xD;
+&#xD;
+	            	label_3.show(true);&#xD;
+	                JTable table1 = new JTable();&#xD;
+	                DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());&#xD;
+	                table1.setModel(model);&#xD;
+	                table1.setAutoCreateRowSorter(true);&#xD;
+	                table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);&#xD;
+	                model = new DefaultTableModel(mapper.getData(),mapper.getHeader());&#xD;
+	                table1.setModel(model);&#xD;
+	                JScrollPane scroll = new JScrollPane(table1);&#xD;
+	                scroll.setBounds(200, 150, 500, 200);&#xD;
+	                table1.setVisible(true);&#xD;
+	                frame.add(scroll);&#xD;
+&#xD;
+&#xD;
+	              //*********excelTable*************************&#xD;
+&#xD;
+&#xD;
+         	 }&#xD;
+         	catch (InvalidExcelFileException e1) {&#xD;
+                  System.out.println(&quot;Invalid Excel file.&quot;);&#xD;
+                  JPanel panel = new JPanel();&#xD;
+                  JOptionPane.showMessageDialog(panel, &quot;Invalid Excel file.&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+              }&#xD;
+         	catch (FileNotFoundException e1) {&#xD;
+                  System.out.println(&quot;File not found.&quot;);&#xD;
+                  JPanel panel = new JPanel();&#xD;
+                  JOptionPane.showMessageDialog(panel, &quot;File not found.&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+              } catch (Exception e1) {&#xD;
+                  System.out.println(&quot;Error occured. Unable to execute mapping.&quot;);&#xD;
+                 // JPanel panel = new JPanel();&#xD;
+                 // JOptionPane.showMessageDialog(panel,&quot; Uncorrect sheet number&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+                  e1.printStackTrace();&#xD;
+              }&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+         }});&#xD;
+     // Import&#xD;
+     button_1.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+&#xD;
+         	ExcelToObjectMapper mapper;&#xD;
+				try {&#xD;
+					mapper = new ExcelToObjectMapper(file);&#xD;
+					GeneralTable table = mapper.map(sheetNo);&#xD;
+					//***********database table*****************&#xD;
+	                label_4.show(true);&#xD;
+	            	projectDB.createTable(table);&#xD;
+	            	projectDB.addTuples(table);&#xD;
+	            	projectDB.getTableTuples(table);&#xD;
+	                Vector v= projectDB.getTableTuples(table);&#xD;
+	                JTable table2 = new JTable();&#xD;
+	                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());&#xD;
+	                table2.setModel(model2);&#xD;
+	                table2.setAutoCreateRowSorter(true);&#xD;
+	                table2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);&#xD;
+	                model2 = new DefaultTableModel(v,mapper.getHeader());&#xD;
+	                table2.setModel(model2);&#xD;
+	                JScrollPane scroll2 = new JScrollPane(table2);&#xD;
+	                scroll2.setBounds(200, 400,500, 200);&#xD;
+	                table2.setVisible(true);&#xD;
+	                frame.add(scroll2);&#xD;
+&#xD;
+&#xD;
+&#xD;
+	              //***********database table*****************&#xD;
+				}  catch (Exception e1) {&#xD;
+                 System.out.println(&quot;Error occured. Unable to execute mapping.&quot;);&#xD;
+                // JPanel panel = new JPanel();&#xD;
+                // JOptionPane.showMessageDialog(panel,&quot; Uncorrect sheet number&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+&#xD;
+&#xD;
+&#xD;
+         }});&#xD;
+&#xD;
+     //************************************&#xD;
+&#xD;
+     button_2.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+         	textField_1.setText(&quot;&quot;);&#xD;
+         	textField_2.setText(&quot;&quot;);&#xD;
+&#xD;
+         }});&#xD;
+&#xD;
+&#xD;
+     //************************************&#xD;
+&#xD;
+     groupLayout1.setHorizontalGroup(&#xD;
+         groupLayout1.createSequentialGroup()&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.LEADING)&#xD;
+                 .addComponent(label_1)&#xD;
+                 .addComponent(label_2)&#xD;
+                 .addComponent(label_3)&#xD;
+                 .addComponent(label_4)&#xD;
+        )&#xD;
+&#xD;
+&#xD;
+&#xD;
+             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.LEADING)&#xD;
+&#xD;
+                 .addComponent(textField_1,  GroupLayout.DEFAULT_SIZE,200,420)&#xD;
+                 .addComponent(textField_2, GroupLayout.DEFAULT_SIZE,200,420)&#xD;
+&#xD;
+                 .addGroup(groupLayout1.createSequentialGroup()&#xD;
+&#xD;
+                     .addComponent(button_3, GroupLayout.DEFAULT_SIZE,100,180)&#xD;
+                     .addComponent(button_4, GroupLayout.DEFAULT_SIZE,100,180)&#xD;
+                     .addComponent(button_1, GroupLayout.DEFAULT_SIZE,100,180)&#xD;
+                     .addComponent(button_2, GroupLayout.DEFAULT_SIZE,100,180)&#xD;
+&#xD;
+                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE,20)&#xD;
+&#xD;
+                 )&#xD;
+             )&#xD;
+&#xD;
+     );&#xD;
+&#xD;
+&#xD;
+     groupLayout1.setVerticalGroup(&#xD;
+         groupLayout1.createSequentialGroup()&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.BASELINE)&#xD;
+                 .addComponent(label_1)&#xD;
+                 .addComponent(textField_1)&#xD;
+             )&#xD;
+&#xD;
+             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.BASELINE)&#xD;
+                 .addComponent(label_2)&#xD;
+                 .addComponent(textField_2)&#xD;
+             )&#xD;
+&#xD;
+             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 20)&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.BASELINE)&#xD;
+             	.addComponent(button_3)&#xD;
+             	.addComponent(button_4)&#xD;
+             	.addComponent(button_1)&#xD;
+                 .addComponent(button_2)&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+             )&#xD;
+             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 40)&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.BASELINE)&#xD;
+                     .addComponent(label_3)&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+                 )&#xD;
+             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,GroupLayout.DEFAULT_SIZE, 200)&#xD;
+             .addGroup(groupLayout1.createParallelGroup(GroupLayout.Alignment.BASELINE)&#xD;
+                     .addComponent(label_4)&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+                 )&#xD;
+&#xD;
+&#xD;
+&#xD;
+     );&#xD;
+&#xD;
+&#xD;
+     frame.setResizable(false);&#xD;
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#xD;
+     frame.setVisible(true);&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_EPzPAINPEeqU8ug8FhpaNA" name="main" isStatic="true" method="_ETQysINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EPz2EINPEeqU8ug8FhpaNA" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EP0dIINPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EP1EMINPEeqU8ug8FhpaNA" name="Database">
+      <ownedAttribute xmi:id="_ETHow4NPEeqU8ug8FhpaNA" name="conn" visibility="package" type="_ESSiUINPEeqU8ug8FhpaNA" association="_ETYHcINPEeqU8ug8FhpaNA">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ETIP0INPEeqU8ug8FhpaNA" value="null"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETIP0oNPEeqU8ug8FhpaNA" name="data" visibility="package" isStatic="true" type="_ESNCwYNPEeqU8ug8FhpaNA" association="_ETYugYNPEeqU8ug8FhpaNA">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ETIP04NPEeqU8ug8FhpaNA" value="new Vector()"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETRZwINPEeqU8ug8FhpaNA" name="Database" specification="_EP3gcINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETRZwYNPEeqU8ug8FhpaNA" type="_EP1EMINPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>try {&#xD;
+         Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;).newInstance();&#xD;
+         &#xD;
+         // jdbc:SGBD://ip:port/database_name?user=username&amp;password=pwd&#xD;
+         this.conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/Database1&quot;, &quot;root&quot;,&quot;Alya@mysql16&quot;);&#xD;
+     } catch (Exception ex) {&#xD;
+         ex.printStackTrace();&#xD;
+     }&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETRZwoNPEeqU8ug8FhpaNA" name="createTable" specification="_ESYB4INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETRZw4NPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+        <language>java</language>
+        <body>try {&#xD;
+&#xD;
+			Statement stmt = this.conn.createStatement();&#xD;
+			&#xD;
+			String query = &quot;CREATE TABLE IF NOT EXISTS &quot;+ gtable.getTableName() +&quot; (&quot; + &#xD;
+					&quot; id INT AUTO_INCREMENT PRIMARY KEY,&quot;;&#xD;
+			&#xD;
+			for(int i = 0; i&lt;gtable.getHeaders().length; i++) {&#xD;
+				query += &quot; &quot; + gtable.getHeaders()[i];&#xD;
+				switch(gtable.getTypes()[i]) {&#xD;
+				case &quot;STRING&quot;:&#xD;
+					query += &quot; VARCHAR(255)&quot;;&#xD;
+					break;&#xD;
+				case &quot;NUMERIC&quot;:&#xD;
+					query += &quot; NUMERIC&quot;;&#xD;
+					break;&#xD;
+				&#xD;
+				case &quot;BOOLEAN&quot;:&#xD;
+					 query += &quot; BOOLEAN&quot;;&#xD;
+	                                 break;&#xD;
+				default:&#xD;
+					break;&#xD;
+				}&#xD;
+				if((i + 1) != gtable.getHeaders().length) {&#xD;
+					query += &quot;,&quot;;&#xD;
+				}				&#xD;
+				&#xD;
+			}&#xD;
+			query += &quot;)  ENGINE=INNODB;&quot;;&#xD;
+&#xD;
+// Other types we may configure - Mhz&#xD;
+			&#xD;
+//					&quot;    title VARCHAR(255) NOT NULL,\n&quot; + &#xD;
+//					&quot;    start_date DATE,\n&quot; + &#xD;
+//					&quot;    due_date DATE,\n&quot; + &#xD;
+//					&quot;    status TINYINT NOT NULL,\n&quot; + &#xD;
+//					&quot;    priority TINYINT NOT NULL,\n&quot; + &#xD;
+//					&quot;    description TEXT,\n&quot; + &#xD;
+//					&quot;    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n&quot; + &#xD;
+//					&quot;)  ENGINE=INNODB;&quot;;&#xD;
+&#xD;
+			int rs = stmt.executeUpdate(query);&#xD;
+			&#xD;
+&#xD;
+		} catch (SQLException e) {&#xD;
+			// TODO Auto-generated catch block&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+				&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETRZxINPEeqU8ug8FhpaNA" name="addTuples" specification="_ESYo8INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETRZxYNPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+        <language>java</language>
+        <body>try {&#xD;
+&#xD;
+			Statement stmt = this.conn.createStatement();&#xD;
+			&#xD;
+			for(int r = 0; r&lt;gtable.getRows().size(); r++) {&#xD;
+				&#xD;
+			String query = &quot;INSERT INTO &quot;+ gtable.getTableName() +&quot; (&quot;;&#xD;
+			&#xD;
+			for(int i = 0; i&lt;gtable.getHeaders().length; i++) {&#xD;
+				query += gtable.getHeaders()[i];&#xD;
+				if((i + 1) != gtable.getHeaders().length) {&#xD;
+					query += &quot;,&quot;;&#xD;
+				}				&#xD;
+				&#xD;
+			}&#xD;
+			query += &quot;)  VALUES(&quot;;&#xD;
+					&#xD;
+			for(int c = 0; c&lt;gtable.getHeaders().length; c++) {&#xD;
+				if(gtable.getRows().get(r)[c] instanceof String) {&#xD;
+					query += &quot;'&quot; + gtable.getRows().get(r)[c] + &quot;'&quot;;&#xD;
+				} else {&#xD;
+					query += gtable.getRows().get(r)[c];&#xD;
+				}&#xD;
+				if((c + 1) != gtable.getHeaders().length) {&#xD;
+					query += &quot;,&quot;;&#xD;
+				}				&#xD;
+				&#xD;
+			}		&#xD;
+										&#xD;
+			query += &quot;);&quot;;&#xD;
+		&#xD;
+			&#xD;
+			int rs = stmt.executeUpdate(query);&#xD;
+			}&#xD;
+&#xD;
+		} catch (SQLException e) {&#xD;
+			// TODO Auto-generated catch block&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+				&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSA0INPEeqU8ug8FhpaNA" name="getTableTuples" specification="_ESYo8oNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSA0YNPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ETSA0oNPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>try {&#xD;
+&#xD;
+		Statement stmt = this.conn.createStatement();&#xD;
+&#xD;
+		ResultSet rs = stmt.executeQuery(&quot;SELECT * FROM &quot;+ gtable.getTableName() +&quot;;&quot;);&#xD;
+		ResultSetMetaData metaData = (ResultSetMetaData) rs.getMetaData();&#xD;
+		int columns = metaData.getColumnCount();&#xD;
+		data.clear();  &#xD;
+	    while (rs.next()) {&#xD;
+	        Vector row = new Vector(columns);&#xD;
+	        for (int i = 2; i &lt;= columns; i++) {&#xD;
+	         row.addElement(rs.getObject(i));&#xD;
+	        }&#xD;
+	        data.addElement(row);&#xD;
+	     }&#xD;
+&#xD;
+	} catch (SQLException e) {&#xD;
+		// TODO Auto-generated catch block&#xD;
+		e.printStackTrace();&#xD;
+	}&#xD;
+&#xD;
+&#xD;
+	return data;&#xD;
+&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_EP3gcINPEeqU8ug8FhpaNA" name="Database" visibility="package" method="_ETRZwINPEeqU8ug8FhpaNA">
+        <eAnnotations xmi:id="_EP4HgINPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_EP4HgYNPEeqU8ug8FhpaNA" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_EP4HgoNPEeqU8ug8FhpaNA" type="_EP1EMINPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ESYB4INPEeqU8ug8FhpaNA" name="createTable" method="_ETRZwoNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ESYB4YNPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ESYo8INPEeqU8ug8FhpaNA" name="addTuples" method="_ETRZxINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ESYo8YNPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ESYo8oNPEeqU8ug8FhpaNA" name="getTableTuples" method="_ETSA0INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ESYo84NPEeqU8ug8FhpaNA" name="gtable" type="_EQEUwINPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ES5mUINPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EP7K0INPEeqU8ug8FhpaNA" name="ExcelToObjectMapper">
+      <ownedComment xmi:id="_ETVrMINPEeqU8ug8FhpaNA">
+        <body>A simple Excel to Object mapper utility using Apache POI.&#xD;
+This class provides utility methods, to read an Excel file and convert each rows of&#xD;
+the excel file into appropriate model object as specified and return all rows of excel&#xD;
+file as list of given object type.</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_ETI24YNPEeqU8ug8FhpaNA" name="workbook" visibility="private" type="_ES5mUYNPEeqU8ug8FhpaNA" association="_ETZVkYNPEeqU8ug8FhpaNA"/>
+      <ownedAttribute xmi:id="_ETJd8YNPEeqU8ug8FhpaNA" name="Columns" visibility="package" isStatic="true" type="_ESNCwYNPEeqU8ug8FhpaNA" association="_ETZ8oYNPEeqU8ug8FhpaNA">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ETJd8oNPEeqU8ug8FhpaNA" value="new Vector()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETKFAYNPEeqU8ug8FhpaNA" name="data" visibility="package" isStatic="true" type="_ESNCwYNPEeqU8ug8FhpaNA" association="_ETajsYNPEeqU8ug8FhpaNA">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ETKFAoNPEeqU8ug8FhpaNA" value="new Vector()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETKFBINPEeqU8ug8FhpaNA" name="SheetNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSA04NPEeqU8ug8FhpaNA" name="ExcelToObjectMapper" specification="_EP9AAINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSA1INPEeqU8ug8FhpaNA" name="fileUrl">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ETSA1YNPEeqU8ug8FhpaNA" type="_EP7K0INPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>try {&#xD;
+     	int count=1;&#xD;
+         workbook = createWorkBook(fileUrl);&#xD;
+         System.out.println(&quot;Workbook has &quot; + workbook.getNumberOfSheets() + &quot; Sheets : &quot;);//&#xD;
+         Iterator&lt;Sheet> sheetIterator = workbook.sheetIterator();//&#xD;
+         while (sheetIterator.hasNext()) {&#xD;
+             Sheet sheet = sheetIterator.next();&#xD;
+             System.out.println(&quot;Sheet &quot;+ count+&quot; :&quot;+ sheet.getSheetName());&#xD;
+             count++;&#xD;
+		    &#xD;
+         }&#xD;
+		  SheetNumber= count;&#xD;
+     } catch (InvalidFormatException e) {&#xD;
+         throw new InvalidExcelFileException(e.getMessage());&#xD;
+     }&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSA1oNPEeqU8ug8FhpaNA" name="map" specification="_EP-OIINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSA14NPEeqU8ug8FhpaNA" name="n">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ETSA2INPEeqU8ug8FhpaNA" type="_EQEUwINPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>Sheet sheet = workbook.getSheetAt(n);&#xD;
+     DataFormatter formatter = new DataFormatter();&#xD;
+&#xD;
+     // Create New table + Set table Name&#xD;
+     GeneralTable gtable = new GeneralTable();&#xD;
+     gtable.setTableName(sheet.getSheetName());&#xD;
+     &#xD;
+     // Headers Reading&#xD;
+     Columns.clear();&#xD;
+     int header = sheet.getFirstRowNum();&#xD;
+     int lastHeaderCell = sheet.getRow(header).getLastCellNum();&#xD;
+     String[] headers = new String[(lastHeaderCell)];&#xD;
+     &#xD;
+     for (int h=0; h&lt;lastHeaderCell;h++) {&#xD;
+     	headers[h] = sheet.getRow(header).getCell(h).getStringCellValue();&#xD;
+         String s=	headers[h].replace(' ', '_');&#xD;
+		s=	headers[h].replace('-', '_');//New&#xD;
+          headers[h]=s;&#xD;
+         System.out.print(headers[h]  + &quot; &quot;);&#xD;
+		if(headers[h].equals(&quot;id&quot;))&#xD;
+         	 headers[h]= &quot;Data_id&quot;;&#xD;
+         Columns.add(headers[h]);&#xD;
+     }&#xD;
+     System.out.println();&#xD;
+     &#xD;
+     gtable.setHeaders(headers);       &#xD;
+     &#xD;
+     // Read first row after header to take types&#xD;
+     int firstRowAfterHeader = header + 1;&#xD;
+     int lastfirstRowAfterHeaderCell = sheet.getRow(firstRowAfterHeader).getLastCellNum();&#xD;
+     String[] types = new String[(lastfirstRowAfterHeaderCell )];&#xD;
+&#xD;
+     for (int t=0; t&lt;lastHeaderCell;t++) {&#xD;
+     	types[t] = sheet.getRow(firstRowAfterHeader).getCell(t).getCellType().toString();&#xD;
+         System.out.print(types[t]  + &quot; &quot;);&#xD;
+     }&#xD;
+     System.out.println();&#xD;
+     gtable.setTypes(types);       &#xD;
+&#xD;
+     // Read Rows&#xD;
+     ArrayList&lt;Object[]> rows = new ArrayList();&#xD;
+     data.clear();       &#xD;
+     int lastRow = sheet.getLastRowNum();&#xD;
+     for (int i=1; i&lt;=lastRow;i++) {&#xD;
+         Object[] row = new Object[headers.length];&#xD;
+         Vector d = new Vector();&#xD;
+&#xD;
+         if (sheet.getRow(i) == null){&#xD;
+         	continue;&#xD;
+         }&#xD;
+         for (int c=0; c&lt;row.length;c++) {&#xD;
+             Cell cell = sheet.getRow(i).getCell(c);&#xD;
+              if (cell == null) {&#xD;
+             	row[c] = &quot; NULL&quot;;&#xD;
+             	continue;&#xD;
+             }&#xD;
+           switch(types[c]) {&#xD;
+           case &quot;STRING&quot; :&#xD;
+         	  String str1 = formatter.formatCellValue(cell);&#xD;
+         	  row[c] = str1;&#xD;
+           	break;&#xD;
+           case &quot;NUMERIC&quot;:&#xD;
+         &#xD;
+           	String str = formatter.formatCellValue(cell);&#xD;
+           	int intNum;&#xD;
+           	double doubleNum = Double.parseDouble(str);&#xD;
+           	if ((doubleNum % 1) == 0) {&#xD;
+           		intNum = (int) doubleNum;&#xD;
+           		row[c] = intNum;&#xD;
+           	} else {&#xD;
+           		row[c] = doubleNum;&#xD;
+           	}&#xD;
+			      &#xD;
+           	/*case &quot;BOOLEAN&quot;:&#xD;
+         	row[c] = cell.getBooleanCellValue();&#xD;
+           	break;*/&#xD;
+			      &#xD;
+           default:&#xD;
+         	  break;&#xD;
+           }&#xD;
+           d.add(row[c]);  &#xD;
+         }&#xD;
+         rows.add(row);&#xD;
+         &#xD;
+         d.add(&quot;\n&quot;);&#xD;
+         data.add(d);&#xD;
+     }&#xD;
+     gtable.setRows(rows);  &#xD;
+     return gtable;&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSA2YNPEeqU8ug8FhpaNA" name="setObjectFieldValueFromCell" specification="_ES-e0YNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSA2oNPEeqU8ug8FhpaNA" name="obj" type="_ES8poINPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ETSA24NPEeqU8ug8FhpaNA" name="field" type="_ESbFMYNPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ETSA3INPEeqU8ug8FhpaNA" name="cell" type="_ES9QsYNPEeqU8ug8FhpaNA"/>
+        <language>java</language>
+        <body>Class&lt;?> cls = field.getType();&#xD;
+     field.setAccessible(true);&#xD;
+     if(cls == String.class) {&#xD;
+         try {&#xD;
+             field.set(obj, cell.getStringCellValue());&#xD;
+         }catch (Exception e) {&#xD;
+             try {&#xD;
+                 field.set(obj, null);&#xD;
+             } catch (IllegalAccessException e1) {&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+         }&#xD;
+     }&#xD;
+     else if(cls == Date.class) {&#xD;
+         try {&#xD;
+             Date date = cell.getDateCellValue();&#xD;
+             field.set(obj, date);&#xD;
+         }catch (Exception e) {&#xD;
+             try {&#xD;
+                 field.set(obj, null);&#xD;
+             } catch (IllegalAccessException e1) {&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+         }&#xD;
+     }&#xD;
+     else if(cls == int.class || cls == long.class || cls == float.class || cls == double.class ){&#xD;
+         double value = cell.getNumericCellValue();&#xD;
+         try {&#xD;
+             if (cls == int.class) {&#xD;
+                 field.set(obj, (int) value);&#xD;
+             }&#xD;
+             else if (cls == long.class) {&#xD;
+                 field.set(obj, (long) value);&#xD;
+             }&#xD;
+             else if (cls == float.class) {&#xD;
+                 field.set(obj, (float) value);&#xD;
+             }&#xD;
+             else {&#xD;
+                 //Double value&#xD;
+                 field.set(obj, value);&#xD;
+             }&#xD;
+         }catch (Exception e) {&#xD;
+             try {&#xD;
+                 field.set(obj, null);&#xD;
+             } catch (IllegalAccessException e1) {&#xD;
+                 System.out.println(&quot;chinna - &quot;);&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+         }&#xD;
+     }&#xD;
+     /*else if(cls == boolean.class) {&#xD;
+         boolean value = cell.getBooleanCellValue();&#xD;
+         try {&#xD;
+             field.set(obj, value);&#xD;
+         }catch (Exception e) {&#xD;
+             try {&#xD;
+                 field.set(obj, null);&#xD;
+             } catch (IllegalAccessException e1) {&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+         }&#xD;
+     }/&#xD;
+     /*else if(cls == Collection.class) {&#xD;
+         double value = cell.getNumericCellValue();&#xD;
+         try {&#xD;
+             field.set(obj, value);&#xD;
+         }catch (Exception e) {&#xD;
+             try {&#xD;
+                 field.set(obj, null);&#xD;
+             } catch (IllegalAccessException e1) {&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+         }&#xD;
+     }*/&#xD;
+     else {&#xD;
+         // Unsupported data type.&#xD;
+     }&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSn4INPEeqU8ug8FhpaNA" name="createWorkBook" specification="_EP_cQINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSn4YNPEeqU8ug8FhpaNA" name="file">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ETSn4oNPEeqU8ug8FhpaNA" type="_ES5mUYNPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>InputStream inp = new FileInputStream(file);&#xD;
+     return WorkbookFactory.create(inp);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSn44NPEeqU8ug8FhpaNA" name="getHeaderIndex" specification="_ES_s8INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSn5INPEeqU8ug8FhpaNA" name="headerName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ETSn5YNPEeqU8ug8FhpaNA" name="workbook" type="_ES5mUYNPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ETSn5oNPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>Sheet sheet = workbook.getSheetAt(0);&#xD;
+     int totalColumns = sheet.getRow(0).getLastCellNum();&#xD;
+     int index = -1;&#xD;
+     for (index=0; index&lt;totalColumns;index++) {&#xD;
+         Cell cell = sheet.getRow(0).getCell(index);&#xD;
+         if(cell.getStringCellValue().toLowerCase().equals(headerName.toLowerCase())) {&#xD;
+             break;&#xD;
+         }&#xD;
+     }&#xD;
+     if(index == -1) {&#xD;
+         throw new InvalidObjectFieldNameException(&quot;Invalid object field name provided.&quot;);&#xD;
+     }&#xD;
+     return index;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSn54NPEeqU8ug8FhpaNA" name="getData" specification="_EQAqYINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSn6INPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>return data;&#xD;
+&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETSn6YNPEeqU8ug8FhpaNA" name="getHeader" specification="_EQBRcINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETSn6oNPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>return Columns;&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_EP9AAINPEeqU8ug8FhpaNA" name="ExcelToObjectMapper" method="_ETSA04NPEeqU8ug8FhpaNA" raisedException="_ESJ_cYNPEeqU8ug8FhpaNA _EQUMYINPEeqU8ug8FhpaNA">
+        <eAnnotations xmi:id="_EP9nEYNPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_EP9nEoNPEeqU8ug8FhpaNA" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_EP9nEINPEeqU8ug8FhpaNA" name="fileUrl">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_EP9nE4NPEeqU8ug8FhpaNA" type="_EP7K0INPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EP-OIINPEeqU8ug8FhpaNA" name="map" method="_ETSA1oNPEeqU8ug8FhpaNA" raisedException="_ES7bgINPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrMYNPEeqU8ug8FhpaNA">
+          <body>Read data from Excel file and convert each rows into list of object.&#xD;
+     * @return List of array of objects. list of rows each row of different objects.&#xD;
+     * @throws Exception if failed to generate mapping.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_EP-1MINPEeqU8ug8FhpaNA" name="n">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ESfWoINPEeqU8ug8FhpaNA" type="_EQEUwINPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EP_cQINPEeqU8ug8FhpaNA" name="createWorkBook" visibility="private" method="_ETSn4INPEeqU8ug8FhpaNA" raisedException="_ESJ_cYNPEeqU8ug8FhpaNA _ESaeIINPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrM4NPEeqU8ug8FhpaNA">
+          <body>Create Apache POI @{@link Workbook} for given excel file.&#xD;
+     * @param file&#xD;
+     * @return&#xD;
+     * @throws IOException&#xD;
+     * @throws InvalidFormatException</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_EQADUINPEeqU8ug8FhpaNA" name="file">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ES_F4INPEeqU8ug8FhpaNA" type="_ES5mUYNPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQAqYINPEeqU8ug8FhpaNA" name="getData" method="_ETSn54NPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ES_s9INPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQBRcINPEeqU8ug8FhpaNA" name="getHeader" method="_ETSn6YNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETAUAINPEeqU8ug8FhpaNA" type="_ESNCwYNPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ES-e0YNPEeqU8ug8FhpaNA" name="setObjectFieldValueFromCell" visibility="private" method="_ETSA2YNPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrMoNPEeqU8ug8FhpaNA">
+          <body>Read value from Cell and set it to given field of given object.&#xD;
+     * Note: supported data Type: String, Date, int, long, float, double and boolean.&#xD;
+     * @param obj Object whom given field belong.&#xD;
+     * @param field Field which value need to be set.&#xD;
+     * @param cell Apache POI cell from which value needs to be retrived.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_ES-e0oNPEeqU8ug8FhpaNA" name="obj" type="_ES8poINPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ES-e04NPEeqU8ug8FhpaNA" name="field" type="_ESbFMYNPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ES-e1INPEeqU8ug8FhpaNA" name="cell" type="_ES9QsYNPEeqU8ug8FhpaNA"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ES_s8INPEeqU8ug8FhpaNA" name="getHeaderIndex" visibility="private" method="_ETSn44NPEeqU8ug8FhpaNA" raisedException="_ES7bgINPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrNINPEeqU8ug8FhpaNA">
+          <body>Read first row/header of Excel file, match given header name and return its index.&#xD;
+     * @param headerName&#xD;
+     * @param workbook&#xD;
+     * @return Index number of header name.&#xD;
+     * @throws InvalidObjectFieldNameException</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_ES_s8YNPEeqU8ug8FhpaNA" name="headerName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ES_s8oNPEeqU8ug8FhpaNA" name="workbook" type="_ES5mUYNPEeqU8ug8FhpaNA"/>
+        <ownedParameter xmi:id="_ES_s84NPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EQEUwINPEeqU8ug8FhpaNA" name="GeneralTable">
+      <ownedAttribute xmi:id="_ETLTIINPEeqU8ug8FhpaNA" name="tableName" visibility="package">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETLTIoNPEeqU8ug8FhpaNA" name="headers" visibility="package">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETL6MINPEeqU8ug8FhpaNA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETL6M4NPEeqU8ug8FhpaNA" name="types" visibility="package">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETMhQINPEeqU8ug8FhpaNA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETMhQ4NPEeqU8ug8FhpaNA" name="rows" visibility="package" type="_ESKmgYNPEeqU8ug8FhpaNA" association="_ETajtINPEeqU8ug8FhpaNA"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETTO8INPEeqU8ug8FhpaNA" name="getTableName" specification="_EQH_IINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETTO8YNPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return tableName;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETTO8oNPEeqU8ug8FhpaNA" name="setTableName" specification="_EQImMINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETTO84NPEeqU8ug8FhpaNA" name="tableName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.tableName = tableName;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETTO9INPEeqU8ug8FhpaNA" name="getHeaders" specification="_EQImMoNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETTO9YNPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETTO9oNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return headers;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETT2AINPEeqU8ug8FhpaNA" name="setHeaders" specification="_EQKbYINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETT2AYNPEeqU8ug8FhpaNA" name="headers">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETT2AoNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.headers = headers;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETT2A4NPEeqU8ug8FhpaNA" name="getTypes" specification="_EQKbY4NPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETT2BINPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETT2BYNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return types;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETT2BoNPEeqU8ug8FhpaNA" name="setTypes" specification="_EQLpgINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETT2B4NPEeqU8ug8FhpaNA" name="types">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETT2CINPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.types = types;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETT2CYNPEeqU8ug8FhpaNA" name="getRows" specification="_EQLpg4NPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETT2CoNPEeqU8ug8FhpaNA" type="_ESKmgYNPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>return rows;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETT2C4NPEeqU8ug8FhpaNA" name="setRows" specification="_ETBiIYNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETT2DINPEeqU8ug8FhpaNA" name="rows" type="_ESKmgYNPEeqU8ug8FhpaNA"/>
+        <language>java</language>
+        <body>this.rows = rows;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_EQH_IINPEeqU8ug8FhpaNA" name="getTableName" method="_ETTO8INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQH_IYNPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQImMINPEeqU8ug8FhpaNA" name="setTableName" method="_ETTO8oNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQImMYNPEeqU8ug8FhpaNA" name="tableName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQImMoNPEeqU8ug8FhpaNA" name="getHeaders" method="_ETTO9INPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQImM4NPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EQImNINPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQKbYINPEeqU8ug8FhpaNA" name="setHeaders" method="_ETT2AINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQKbYYNPEeqU8ug8FhpaNA" name="headers">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EQKbYoNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQKbY4NPEeqU8ug8FhpaNA" name="getTypes" method="_ETT2A4NPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQLCcINPEeqU8ug8FhpaNA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EQLCcYNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQLpgINPEeqU8ug8FhpaNA" name="setTypes" method="_ETT2BoNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_EQLpgYNPEeqU8ug8FhpaNA" name="types">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EQLpgoNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQLpg4NPEeqU8ug8FhpaNA" name="getRows" method="_ETT2CYNPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETBiIINPEeqU8ug8FhpaNA" type="_ESKmgYNPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ETBiIYNPEeqU8ug8FhpaNA" name="setRows" method="_ETT2C4NPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETBiIoNPEeqU8ug8FhpaNA" name="rows" type="_ESKmgYNPEeqU8ug8FhpaNA"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EQPT4INPEeqU8ug8FhpaNA" name="Importer">
+      <ownedAttribute xmi:id="_ETNvYYNPEeqU8ug8FhpaNA" name="file" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETOWcYNPEeqU8ug8FhpaNA" name="sheetNo" visibility="package" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ETO9gINPEeqU8ug8FhpaNA" name="Excel_Importer" visibility="private" type="_ESmEUYNPEeqU8ug8FhpaNA" association="_ETbKwYNPEeqU8ug8FhpaNA"/>
+      <ownedAttribute xmi:id="_ETO9goNPEeqU8ug8FhpaNA" name="textField" visibility="private" type="_ESsK8INPEeqU8ug8FhpaNA" association="_ETbx0YNPEeqU8ug8FhpaNA"/>
+      <ownedAttribute xmi:id="_ETPkkYNPEeqU8ug8FhpaNA" name="textField_1" visibility="private" type="_ESsK8INPEeqU8ug8FhpaNA" association="_ETcY4YNPEeqU8ug8FhpaNA"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETUdEINPEeqU8ug8FhpaNA" name="main" specification="_EQRJEINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETUdEYNPEeqU8ug8FhpaNA" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ETUdEoNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>EventQueue.invokeLater(new Runnable() {&#xD;
+			public void run() {&#xD;
+				try {&#xD;
+					Importer window = new Importer();&#xD;
+					window.Excel_Importer.setVisible(true);&#xD;
+				} catch (Exception e) {&#xD;
+					e.printStackTrace();&#xD;
+				}&#xD;
+			}&#xD;
+		});&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETUdE4NPEeqU8ug8FhpaNA" name="Importer" specification="_EQSXMINPEeqU8ug8FhpaNA">
+        <ownedParameter xmi:id="_ETUdFINPEeqU8ug8FhpaNA" type="_EQPT4INPEeqU8ug8FhpaNA" direction="return"/>
+        <language>java</language>
+        <body>initialize();&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ETUdFYNPEeqU8ug8FhpaNA" name="initialize" specification="_EQS-Q4NPEeqU8ug8FhpaNA">
+        <language>java</language>
+        <body>Database projectDB = new Database();&#xD;
+		Excel_Importer = new JFrame();&#xD;
+		Excel_Importer.setTitle(&quot;Excel Importer Program&quot;);&#xD;
+		Excel_Importer.setBounds(100, 100, 700,650);&#xD;
+		Excel_Importer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#xD;
+		Excel_Importer.getContentPane().setLayout(null);&#xD;
+		JFileChooser chooser = new JFileChooser();&#xD;
+     FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;excel table file&quot;, &quot;xlsx&quot;, &quot;xlsm&quot; );&#xD;
+     chooser.setFileFilter(filter);&#xD;
+		JPanel panel = new JPanel();&#xD;
+		panel.setBorder(new LineBorder(new Color(153, 180, 209), 1, true));&#xD;
+		panel.setBounds(28, 29, 619, 162);&#xD;
+		Excel_Importer.getContentPane().add(panel);&#xD;
+&#xD;
+		JLabel lblNewLabel = new JLabel(&quot;Excel File Directory&quot;);&#xD;
+		lblNewLabel.setFont(new Font(&quot;Times New Roman&quot;, Font.BOLD, 12));&#xD;
+&#xD;
+		JLabel lblSheetNumber = new JLabel(&quot;Sheet Number&quot;);&#xD;
+		lblSheetNumber.setFont(new Font(&quot;Times New Roman&quot;, Font.BOLD, 12));&#xD;
+&#xD;
+		textField = new JTextField();&#xD;
+		textField.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));&#xD;
+		textField.setColumns(10);&#xD;
+		textField.setText(&quot;Click Open file &quot;);&#xD;
+     textField.setEditable(false);&#xD;
+&#xD;
+		textField_1 = new JTextField();&#xD;
+		textField_1.setColumns(10);&#xD;
+&#xD;
+		JButton btnOpenFile = new JButton(&quot;Open File&quot;);&#xD;
+		btnOpenFile.addActionListener(new ActionListener() {&#xD;
+			public void actionPerformed(ActionEvent e) {&#xD;
+				int returnedValue = chooser.showOpenDialog(Excel_Importer);&#xD;
+         	if(returnedValue == JFileChooser.APPROVE_OPTION) {&#xD;
+             File selectedFile = chooser.getSelectedFile();&#xD;
+             file = selectedFile.getPath();&#xD;
+             textField.setText(file);}&#xD;
+			}&#xD;
+		});&#xD;
+&#xD;
+		JButton btnOpenFile_1 = new JButton(&quot;Rest&quot;);&#xD;
+		btnOpenFile_1.addActionListener(new ActionListener() {&#xD;
+			public void actionPerformed(ActionEvent e) {&#xD;
+				textField.setText(&quot;&quot;);&#xD;
+         	textField_1.setText(&quot;&quot;);&#xD;
+			}&#xD;
+		});&#xD;
+		GroupLayout gl_panel = new GroupLayout(panel);&#xD;
+		gl_panel.setHorizontalGroup(&#xD;
+			gl_panel.createParallelGroup(Alignment.LEADING)&#xD;
+				.addGroup(gl_panel.createSequentialGroup()&#xD;
+					.addContainerGap()&#xD;
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)&#xD;
+						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)&#xD;
+						.addComponent(lblSheetNumber, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))&#xD;
+					.addPreferredGap(ComponentPlacement.RELATED)&#xD;
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)&#xD;
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 380, GroupLayout.PREFERRED_SIZE)&#xD;
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 380, GroupLayout.PREFERRED_SIZE)&#xD;
+						.addGroup(gl_panel.createSequentialGroup()&#xD;
+							.addComponent(btnOpenFile)&#xD;
+							.addGap(30)&#xD;
+							.addComponent(btnOpenFile_1, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)))&#xD;
+					.addContainerGap(46, Short.MAX_VALUE))&#xD;
+		);&#xD;
+		gl_panel.setVerticalGroup(&#xD;
+			gl_panel.createParallelGroup(Alignment.LEADING)&#xD;
+				.addGroup(gl_panel.createSequentialGroup()&#xD;
+					.addContainerGap()&#xD;
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)&#xD;
+						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)&#xD;
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))&#xD;
+					.addGap(32)&#xD;
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)&#xD;
+						.addComponent(lblSheetNumber, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)&#xD;
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))&#xD;
+					.addPreferredGap(ComponentPlacement.RELATED)&#xD;
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)&#xD;
+						.addComponent(btnOpenFile)&#xD;
+						.addComponent(btnOpenFile_1))&#xD;
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))&#xD;
+		);&#xD;
+		panel.setLayout(gl_panel);&#xD;
+&#xD;
+		JPanel panel_1 = new JPanel();&#xD;
+		panel_1.setBorder(new LineBorder(SystemColor.activeCaption));&#xD;
+		panel_1.setBounds(28, 220, 619, 162);&#xD;
+		Excel_Importer.getContentPane().add(panel_1);&#xD;
+&#xD;
+		JButton btnViewData = new JButton(&quot;View Data&quot;);&#xD;
+		JScrollPane scrollPane_1_1 = new JScrollPane();&#xD;
+		scrollPane_1_1.setPreferredSize(new Dimension(400, 250));&#xD;
+		btnViewData.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+&#xD;
+         int Sheetnumber;&#xD;
+             while(true) {&#xD;
+         	Sheetnumber=(Integer.valueOf(textField_1.getText()));&#xD;
+         	if (Sheetnumber>0) {&#xD;
+         	sheetNo=Sheetnumber-1;&#xD;
+&#xD;
+         	break;&#xD;
+         	}&#xD;
+         	//else&#xD;
+         	if(Sheetnumber==0) {&#xD;
+         		JOptionPane.showMessageDialog(null,&#xD;
+                         &quot;Error: Sheet number range is starting from 1&quot;,&#xD;
+                         &quot;Error: MESSAGE&quot;,&#xD;
+                         JOptionPane.WARNING_MESSAGE);&#xD;
+         		}&#xD;
+         	textField_1.setText(&quot;&quot;);&#xD;
+         	Sheetnumber=(Integer.valueOf(textField_1.getText()));&#xD;
+             }//End while loop&#xD;
+&#xD;
+         	try {&#xD;
+         		ExcelToObjectMapper mapper = new ExcelToObjectMapper(file);&#xD;
+     			int count = mapper.SheetNumber;&#xD;
+&#xD;
+                         while(sheetNo >count) {&#xD;
+                         	if(sheetNo >count) {&#xD;
+                         		JOptionPane.showMessageDialog(null,&#xD;
+                                         &quot;Error: The file contines only :&quot; +count +&quot; Sheets&quot;,&#xD;
+                                         &quot;Error: MESSAGE&quot;,&#xD;
+                                         JOptionPane.WARNING_MESSAGE);&#xD;
+                         		}&#xD;
+                         	else if (Sheetnumber==0) {&#xD;
+                         		JOptionPane.showMessageDialog(null,&#xD;
+                         				&quot;Error: Sheet number range is starting from 1&quot;,&#xD;
+                                         &quot;Error: MESSAGE&quot;,&#xD;
+                                         JOptionPane.WARNING_MESSAGE);&#xD;
+                         	}&#xD;
+                            else&#xD;
+                         	break;&#xD;
+&#xD;
+                         	textField_1.setText(&quot;&quot;);&#xD;
+                         	Sheetnumber=(Integer.valueOf(textField_1.getText()));&#xD;
+&#xD;
+                             }//End while loop&#xD;
+                         sheetNo=Sheetnumber-1;&#xD;
+                     	GeneralTable table = mapper.map(sheetNo);&#xD;
+            &#xD;
+&#xD;
+                     	 //*********excelTable*************************&#xD;
+&#xD;
+     	            	&#xD;
+     	                JTable table1 = new JTable();&#xD;
+     	                DefaultTableModel model = new DefaultTableModel(mapper.getData(),mapper.getHeader());&#xD;
+     	                table1.setModel(model);&#xD;
+     	                table1.setAutoCreateRowSorter(true);&#xD;
+     	                table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);&#xD;
+     	                model = new DefaultTableModel(mapper.getData(),mapper.getHeader());&#xD;
+     	                table1.setModel(model);&#xD;
+     	        		scrollPane_1_1.setViewportView(table1);&#xD;
+     	          &#xD;
+&#xD;
+     	        		//*********excelTable*************************&#xD;
+&#xD;
+&#xD;
+         	 }&#xD;
+         	catch (InvalidExcelFileException e1) {&#xD;
+                  System.out.println(&quot;Invalid Excel file.&quot;);&#xD;
+                  JPanel panel = new JPanel();&#xD;
+                  JOptionPane.showMessageDialog(panel, &quot;Invalid Excel file.&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+              }&#xD;
+         	catch (FileNotFoundException e1) {&#xD;
+                  System.out.println(&quot;File not found.&quot;);&#xD;
+                  JPanel panel = new JPanel();&#xD;
+                  JOptionPane.showMessageDialog(panel, &quot;File not found.&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+              } catch (Exception e1) {&#xD;
+                  System.out.println(&quot;Error occured. Unable to execute mapping.&quot;);&#xD;
+                 // JPanel panel = new JPanel();&#xD;
+                 // JOptionPane.showMessageDialog(panel,&quot; Uncorrect sheet number&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+                  e1.printStackTrace();&#xD;
+              }&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+         }});&#xD;
+		&#xD;
+&#xD;
+		GroupLayout gl_panel_1 = new GroupLayout(panel_1);&#xD;
+		gl_panel_1.setHorizontalGroup(&#xD;
+			gl_panel_1.createParallelGroup(Alignment.LEADING)&#xD;
+				.addGroup(gl_panel_1.createSequentialGroup()&#xD;
+					.addGap(24)&#xD;
+					.addComponent(btnViewData, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)&#xD;
+					.addPreferredGap(ComponentPlacement.RELATED, 49, Short.MAX_VALUE)&#xD;
+					.addComponent(scrollPane_1_1, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)&#xD;
+					.addGap(28))&#xD;
+		);&#xD;
+		gl_panel_1.setVerticalGroup(&#xD;
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)&#xD;
+				.addGroup(gl_panel_1.createSequentialGroup()&#xD;
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)&#xD;
+						.addGroup(gl_panel_1.createSequentialGroup()&#xD;
+							.addGap(70)&#xD;
+							.addComponent(btnViewData))&#xD;
+						.addGroup(gl_panel_1.createSequentialGroup()&#xD;
+							.addContainerGap()&#xD;
+							.addComponent(scrollPane_1_1, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)))&#xD;
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))&#xD;
+		);&#xD;
+		panel_1.setLayout(gl_panel_1);&#xD;
+&#xD;
+		JPanel panel_2 = new JPanel();&#xD;
+		panel_2.setBorder(new LineBorder(SystemColor.activeCaption));&#xD;
+		panel_2.setBounds(28, 405, 619, 162);&#xD;
+		Excel_Importer.getContentPane().add(panel_2);&#xD;
+		JButton btnImportData = new JButton(&quot;Import Data&quot;);&#xD;
+		JScrollPane scrollPane_1 = new JScrollPane();&#xD;
+		scrollPane_1.setPreferredSize(new Dimension(400,250));&#xD;
+		btnImportData.addActionListener(new ActionListener() {&#xD;
+         @Override&#xD;
+         public void actionPerformed(ActionEvent e) {&#xD;
+&#xD;
+         	ExcelToObjectMapper mapper;&#xD;
+				try {&#xD;
+					mapper = new ExcelToObjectMapper(file);&#xD;
+					GeneralTable table = mapper.map(sheetNo);&#xD;
+					//***********database table*****************&#xD;
+	            	projectDB.createTable(table);&#xD;
+	            	projectDB.addTuples(table);&#xD;
+	            	projectDB.getTableTuples(table);&#xD;
+	                Vector v= projectDB.getTableTuples(table);&#xD;
+	                JTable table2 = new JTable();&#xD;
+	                DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());&#xD;
+	                table2.setModel(model2);&#xD;
+	                table2.setAutoCreateRowSorter(true);&#xD;
+	                table2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);&#xD;
+	                model2 = new DefaultTableModel(v,mapper.getHeader());&#xD;
+	                table2.setModel(model2);&#xD;
+	                scrollPane_1.setViewportView(table2);&#xD;
+	              &#xD;
+	             &#xD;
+	              //***********database table*****************&#xD;
+			&#xD;
+				}  catch (Exception e1) {&#xD;
+                 System.out.println(&quot;Error occured. Unable to execute mapping.&quot;);&#xD;
+                // JPanel panel = new JPanel();&#xD;
+                // JOptionPane.showMessageDialog(panel,&quot; Uncorrect sheet number&quot;, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+&#xD;
+                 e1.printStackTrace();&#xD;
+             }&#xD;
+&#xD;
+&#xD;
+&#xD;
+         }});&#xD;
+		&#xD;
+&#xD;
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);&#xD;
+		gl_panel_2.setHorizontalGroup(&#xD;
+			gl_panel_2.createParallelGroup(Alignment.LEADING)&#xD;
+				.addGroup(gl_panel_2.createSequentialGroup()&#xD;
+					.addGap(34)&#xD;
+					.addComponent(btnImportData)&#xD;
+					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)&#xD;
+					.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)&#xD;
+					.addGap(24))&#xD;
+		);&#xD;
+		gl_panel_2.setVerticalGroup(&#xD;
+			gl_panel_2.createParallelGroup(Alignment.LEADING)&#xD;
+				.addGroup(gl_panel_2.createSequentialGroup()&#xD;
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)&#xD;
+						.addGroup(gl_panel_2.createSequentialGroup()&#xD;
+							.addGap(69)&#xD;
+							.addComponent(btnImportData))&#xD;
+						.addGroup(gl_panel_2.createSequentialGroup()&#xD;
+							.addContainerGap()&#xD;
+							.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)))&#xD;
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))&#xD;
+		);&#xD;
+		panel_2.setLayout(gl_panel_2);&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_EQRJEINPEeqU8ug8FhpaNA" name="main" isStatic="true" method="_ETUdEINPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrNYNPEeqU8ug8FhpaNA">
+          <body>Launch the application.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_EQRwIINPEeqU8ug8FhpaNA" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EQRwIYNPEeqU8ug8FhpaNA" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQSXMINPEeqU8ug8FhpaNA" name="Importer" method="_ETUdE4NPEeqU8ug8FhpaNA">
+        <eAnnotations xmi:id="_EQS-QINPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_EQS-QYNPEeqU8ug8FhpaNA" key="create"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_ETVrNoNPEeqU8ug8FhpaNA">
+          <body>Create the application.</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_EQS-QoNPEeqU8ug8FhpaNA" type="_EQPT4INPEeqU8ug8FhpaNA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EQS-Q4NPEeqU8ug8FhpaNA" name="initialize" visibility="private" method="_ETUdFYNPEeqU8ug8FhpaNA">
+        <ownedComment xmi:id="_ETVrN4NPEeqU8ug8FhpaNA">
+          <body>Initialize the contents of the frame.</body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETYHcINPEeqU8ug8FhpaNA" name="" memberEnd="_ETYHcYNPEeqU8ug8FhpaNA _ETHow4NPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETYHcYNPEeqU8ug8FhpaNA" name="" type="_EP1EMINPEeqU8ug8FhpaNA" association="_ETYHcINPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETYugYNPEeqU8ug8FhpaNA" name="" memberEnd="_ETYugoNPEeqU8ug8FhpaNA _ETIP0oNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETYugoNPEeqU8ug8FhpaNA" name="" type="_EP1EMINPEeqU8ug8FhpaNA" association="_ETYugYNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETZVkYNPEeqU8ug8FhpaNA" name="" memberEnd="_ETZVkoNPEeqU8ug8FhpaNA _ETI24YNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETZVkoNPEeqU8ug8FhpaNA" name="" type="_EP7K0INPEeqU8ug8FhpaNA" association="_ETZVkYNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETZ8oYNPEeqU8ug8FhpaNA" name="" memberEnd="_ETZ8ooNPEeqU8ug8FhpaNA _ETJd8YNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETZ8ooNPEeqU8ug8FhpaNA" name="" type="_EP7K0INPEeqU8ug8FhpaNA" association="_ETZ8oYNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETajsYNPEeqU8ug8FhpaNA" name="" memberEnd="_ETajsoNPEeqU8ug8FhpaNA _ETKFAYNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETajsoNPEeqU8ug8FhpaNA" name="" type="_EP7K0INPEeqU8ug8FhpaNA" association="_ETajsYNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETajtINPEeqU8ug8FhpaNA" name="" memberEnd="_ETajtYNPEeqU8ug8FhpaNA _ETMhQ4NPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETajtYNPEeqU8ug8FhpaNA" name="" type="_EQEUwINPEeqU8ug8FhpaNA" association="_ETajtINPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETbKwYNPEeqU8ug8FhpaNA" name="" memberEnd="_ETbKwoNPEeqU8ug8FhpaNA _ETO9gINPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETbKwoNPEeqU8ug8FhpaNA" name="" type="_EQPT4INPEeqU8ug8FhpaNA" association="_ETbKwYNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETbx0YNPEeqU8ug8FhpaNA" name="" memberEnd="_ETbx0oNPEeqU8ug8FhpaNA _ETO9goNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETbx0oNPEeqU8ug8FhpaNA" name="" type="_EQPT4INPEeqU8ug8FhpaNA" association="_ETbx0YNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ETcY4YNPEeqU8ug8FhpaNA" name="" memberEnd="_ETcY4oNPEeqU8ug8FhpaNA _ETPkkYNPEeqU8ug8FhpaNA">
+      <ownedEnd xmi:id="_ETcY4oNPEeqU8ug8FhpaNA" name="" type="_EQPT4INPEeqU8ug8FhpaNA" association="_ETcY4YNPEeqU8ug8FhpaNA"/>
+    </packagedElement>
+    <profileApplication xmi:id="_EE0uEINPEeqU8ug8FhpaNA">
+      <eAnnotations xmi:id="_EE0uEYNPEeqU8ug8FhpaNA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_EE1VIINPEeqU8ug8FhpaNA" base_Package="_D7iPMINPEeqU8ug8FhpaNA">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Array xmi:id="_EQJNQINPEeqU8ug8FhpaNA" base_Element="_EQImMoNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Array xmi:id="_EQLCcoNPEeqU8ug8FhpaNA" base_Element="_EQKbY4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Generics xmi:id="_EQM3oINPEeqU8ug8FhpaNA" genericsValue="Object[]" base_Element="_EQLpg4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESJYYINPEeqU8ug8FhpaNA" base_Element="_ESFuAINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESJ_cINPEeqU8ug8FhpaNA" base_Element="_ESJYYYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESKmgINPEeqU8ug8FhpaNA" base_Element="_ESJ_cYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESLNkINPEeqU8ug8FhpaNA" base_Element="_ESKmgYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESMbsINPEeqU8ug8FhpaNA" base_Element="_ESLNkYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESNCwINPEeqU8ug8FhpaNA" base_Element="_ESMbsYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESNp0INPEeqU8ug8FhpaNA" base_Element="_ESNCwYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESOQ4INPEeqU8ug8FhpaNA" base_Element="_ESNp0YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESO38INPEeqU8ug8FhpaNA" base_Element="_ESOQ4YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESQGEINPEeqU8ug8FhpaNA" base_Element="_ESO38YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESQtIINPEeqU8ug8FhpaNA" base_Element="_ESQGEYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESRUMINPEeqU8ug8FhpaNA" base_Element="_ESQtIYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESRUMoNPEeqU8ug8FhpaNA" base_Element="_ESRUMYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESTwcINPEeqU8ug8FhpaNA" base_Element="_ESSiUINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESU-kINPEeqU8ug8FhpaNA" base_Element="_ESTwcYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESVloINPEeqU8ug8FhpaNA" base_Element="_ESU-kYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESWMsINPEeqU8ug8FhpaNA" base_Element="_ESVloYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESWzwINPEeqU8ug8FhpaNA" base_Element="_ESWMsYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESXa0INPEeqU8ug8FhpaNA" base_Element="_ESWzwYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESbFMINPEeqU8ug8FhpaNA" base_Element="_ESaeIINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESbsQINPEeqU8ug8FhpaNA" base_Element="_ESbFMYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESdhcINPEeqU8ug8FhpaNA" base_Element="_ESbsQYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESeIgINPEeqU8ug8FhpaNA" base_Element="_ESdhcYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESevkINPEeqU8ug8FhpaNA" base_Element="_ESeIgYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESmEUINPEeqU8ug8FhpaNA" base_Element="_ESkPIINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESmrYINPEeqU8ug8FhpaNA" base_Element="_ESmEUYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESnScINPEeqU8ug8FhpaNA" base_Element="_ESmrYYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESn5gINPEeqU8ug8FhpaNA" base_Element="_ESnScYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESogkINPEeqU8ug8FhpaNA" base_Element="_ESn5gYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESpusINPEeqU8ug8FhpaNA" base_Element="_ESogkYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESqVwINPEeqU8ug8FhpaNA" base_Element="_ESpusYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESq80INPEeqU8ug8FhpaNA" base_Element="_ESqVwYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESrj4INPEeqU8ug8FhpaNA" base_Element="_ESq80YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESrj4oNPEeqU8ug8FhpaNA" base_Element="_ESrj4YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESsyAINPEeqU8ug8FhpaNA" base_Element="_ESsK8INPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESuAIINPEeqU8ug8FhpaNA" base_Element="_ESsyAYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESunMINPEeqU8ug8FhpaNA" base_Element="_ESuAIYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESvOQINPEeqU8ug8FhpaNA" base_Element="_ESunMYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESv1UINPEeqU8ug8FhpaNA" base_Element="_ESvOQYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESwcYINPEeqU8ug8FhpaNA" base_Element="_ESv1UYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESxDcINPEeqU8ug8FhpaNA" base_Element="_ESwcYYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESxqgYNPEeqU8ug8FhpaNA" base_Element="_ESxqgINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESy4oINPEeqU8ug8FhpaNA" base_Element="_ESyRkINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ESzfsINPEeqU8ug8FhpaNA" base_Element="_ESy4oYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ES60cINPEeqU8ug8FhpaNA" base_Element="_ES5mUYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ES8CkINPEeqU8ug8FhpaNA" base_Element="_ES7bgINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ES9QsINPEeqU8ug8FhpaNA" base_Element="_ES8poINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ES-e0INPEeqU8ug8FhpaNA" base_Element="_ES9QsYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Generics xmi:id="_ETCJMINPEeqU8ug8FhpaNA" genericsValue="Object[]" base_Element="_ETBiIoNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETElcINPEeqU8ug8FhpaNA" base_Element="_ETD-YINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETHowINPEeqU8ug8FhpaNA" base_Element="_ETGaoINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETHowoNPEeqU8ug8FhpaNA" base_Element="_ETHowYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETIP0YNPEeqU8ug8FhpaNA" base_Element="_ETHow4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETI24INPEeqU8ug8FhpaNA" base_Element="_ETIP0oNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETJd8INPEeqU8ug8FhpaNA" base_Element="_ETI24YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETKFAINPEeqU8ug8FhpaNA" base_Element="_ETJd8YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETKFA4NPEeqU8ug8FhpaNA" base_Element="_ETKFAYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETKsEINPEeqU8ug8FhpaNA" base_Element="_ETKFBINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETLTIYNPEeqU8ug8FhpaNA" base_Element="_ETLTIINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Array xmi:id="_ETL6MYNPEeqU8ug8FhpaNA" dimensions="1" base_Element="_ETLTIoNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETL6MoNPEeqU8ug8FhpaNA" base_Element="_ETLTIoNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Array xmi:id="_ETMhQYNPEeqU8ug8FhpaNA" dimensions="1" base_Element="_ETL6M4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETMhQoNPEeqU8ug8FhpaNA" base_Element="_ETL6M4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Generics xmi:id="_ETNIUINPEeqU8ug8FhpaNA" genericsValue="Object[]" base_Element="_ETMhQ4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETNvYINPEeqU8ug8FhpaNA" base_Element="_ETMhQ4NPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETOWcINPEeqU8ug8FhpaNA" base_Element="_ETNvYYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETOWcoNPEeqU8ug8FhpaNA" base_Element="_ETOWcYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETO9gYNPEeqU8ug8FhpaNA" base_Element="_ETO9gINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETPkkINPEeqU8ug8FhpaNA" base_Element="_ETO9goNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_ETQLoINPEeqU8ug8FhpaNA" base_Element="_ETPkkYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETYugINPEeqU8ug8FhpaNA" base_Element="_ETYHcINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETZVkINPEeqU8ug8FhpaNA" base_Element="_ETYugYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETZ8oINPEeqU8ug8FhpaNA" base_Element="_ETZVkYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETajsINPEeqU8ug8FhpaNA" base_Element="_ETZ8oYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETajs4NPEeqU8ug8FhpaNA" base_Element="_ETajsYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETbKwINPEeqU8ug8FhpaNA" base_Element="_ETajtINPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETbx0INPEeqU8ug8FhpaNA" base_Element="_ETbKwYNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETcY4INPEeqU8ug8FhpaNA" base_Element="_ETbx0YNPEeqU8ug8FhpaNA"/>
+  <UMLLabProfile:Reference xmi:id="_ETcY44NPEeqU8ug8FhpaNA" base_Element="_ETcY4YNPEeqU8ug8FhpaNA"/>
+</xmi:XMI>
