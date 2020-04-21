@@ -1,6 +1,7 @@
 ## Project 581 : DB import from excel + GUI
 
 #### Steps to run:  
+Run Jar file  ```DBExcelImport.jar```  
 1- Choose your Excel File.  
 2- Determine sheet number you want to import or select all sheets.  
 3- View data before import it to database.  
