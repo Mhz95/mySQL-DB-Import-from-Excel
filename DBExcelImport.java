@@ -4,11 +4,8 @@ import java.awt.event.*;
 import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -48,6 +45,7 @@ public class DBExcelImport extends JFrame {
 	JButton viewBtn;
 	JButton clear;
 	JButton exit;
+	JButton login;
 	JButton readFileBtn;
 	JProgressBar progressBar;
 	JLabel filepathLbl;
@@ -58,7 +56,6 @@ public class DBExcelImport extends JFrame {
 	JLabel author;
 	JTextField textfilepath;
 	JLabel dbNameLbl;
-	JTextField dbNameTxt;
 	JLabel userNameLbl;
 	JTextField userNameTxt;
 	JLabel pwdLbl;
@@ -66,9 +63,11 @@ public class DBExcelImport extends JFrame {
 	JFileChooser chooser;
 	JTable excelTable;
 	JComboBox<String> sheetNumCb;
+	JComboBox<String> dbNameCb;
 	static JTextArea logs;
 	static boolean errorconnected = false;
 	int numberOfSheets;
+	static List dblist;
 
 	String dbName, userName, pwd;
 
@@ -82,7 +81,7 @@ public class DBExcelImport extends JFrame {
 		 * Setup JFrame
 		 */
 		setTitle("CSC 581 - Excel to DB");
-		setSize(960, 580);
+		setSize(960, 630);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
@@ -118,12 +117,13 @@ public class DBExcelImport extends JFrame {
 		importBtn = new JButton("Import");
 		viewBtn = new JButton("View Data");
 		clear = new JButton("Reset");
+		login = new JButton("Login");
 		readFileBtn = new JButton("Open file");
 		progressBar = new JProgressBar();
 		progressBar.setIndeterminate(true);
 		progressBar.setVisible(false);
 		textfilepath = new JTextField();
-		dbNameTxt = new JTextField();
+		dbNameCb = new JComboBox<String>();
 		userNameTxt = new JTextField();
 		pwdTxt = new JPasswordField();
 		sheetNumCb = new JComboBox<String>();
@@ -131,12 +131,13 @@ public class DBExcelImport extends JFrame {
 		excelTable = new JTable();
 
 		add(dbNameLbl);
-		add(dbNameTxt);
+		add(dbNameCb);
 		add(userNameLbl);
 		add(userNameTxt);
 		add(pwdLbl);
 		add(pwdTxt);
 		add(connect);
+		add(login);
 
 		add(filepathLbl);
 		add(textfilepath);
@@ -161,34 +162,36 @@ public class DBExcelImport extends JFrame {
 		 * @param (x,y,width,height)
 		 */
 
-		dbNameLbl.setBounds(500, 10, 100, 40);
-		dbNameTxt.setBounds(500, 40, 100, 30);
+		dbNameLbl.setBounds(500, 60, 100, 40);
+		dbNameCb.setBounds(500, 90, 250, 30);
 
-		userNameLbl.setBounds(600, 10, 100, 40);
-		userNameTxt.setBounds(600, 40, 100, 30);
+		userNameLbl.setBounds(500, 10, 100, 40);
+		userNameTxt.setBounds(500, 40, 150, 30);
 
-		pwdLbl.setBounds(700, 10, 100, 40);
-		pwdTxt.setBounds(700, 40, 100, 30);
+		pwdLbl.setBounds(650, 10, 100, 40);
+		pwdTxt.setBounds(650, 40, 150, 30);
+		
+		login.setBounds(810, 40, 100, 40);
+		
+		connect.setBounds(810, 90, 100, 40);
 
-		connect.setBounds(810, 40, 100, 40);
+		filepathLbl.setBounds(500, 110, 250, 40);
+		textfilepath.setBounds(500, 140, 300, 30);
 
-		filepathLbl.setBounds(500, 60, 250, 40);
-		textfilepath.setBounds(500, 90, 300, 30);
+		readFileBtn.setBounds(810, 135, 100, 40);
 
-		readFileBtn.setBounds(810, 85, 100, 40);
+		sheetNumLbl.setBounds(500, 165, 250, 40);
+		sheetNumCb.setBounds(500, 190, 250, 40);
 
-		sheetNumLbl.setBounds(500, 115, 250, 40);
-		sheetNumCb.setBounds(500, 140, 250, 40);
+		viewBtn.setBounds(500, 230, 100, 40);
+		importBtn.setBounds(600, 230, 100, 40);
+		clear.setBounds(810, 230, 100, 40);
 
-		viewBtn.setBounds(500, 180, 100, 40);
-		importBtn.setBounds(600, 180, 100, 40);
-		clear.setBounds(810, 180, 100, 40);
+		progressBar.setBounds(500, 270, 250, 30);
 
-		progressBar.setBounds(500, 220, 250, 30);
-
-		logsLbl.setBounds(500, 240, 160, 40);
-		logsPane.setBounds(500, 275, 300, 250);
-		author.setBounds(300, 520, 400, 40);
+		logsLbl.setBounds(500, 290, 160, 40);
+		logsPane.setBounds(500, 325, 300, 250);
+		author.setBounds(300, 570, 400, 40);
 
 		excelPreviewLbl.setBounds(30, 10, 250, 40);
 		dbPreviewLbl.setBounds(30, 240, 250, 40);
@@ -197,7 +200,8 @@ public class DBExcelImport extends JFrame {
 		viewBtn.setEnabled(false);
 		importBtn.setEnabled(false);
 		readFileBtn.setEnabled(false);
-
+		dbNameCb.setEnabled(false);
+		connect.setEnabled(false);
 		/**
 		 * onClick open file
 		 */
@@ -237,6 +241,61 @@ public class DBExcelImport extends JFrame {
 			}
 		});
 		/**
+		 * onClick on Login
+		 */
+		login.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				logs.setText("");
+
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+
+						logs.setText("Connecting to DB ...");
+						progressBar.setVisible(true);
+
+						try {
+							userName = userNameTxt.getText();
+							pwd = pwdTxt.getText();
+
+							errorconnected = false;
+
+							if (userNameTxt.getText().equals("")) {
+								logs.setText("DB user name can't be empty!");
+							} else {
+								dblist = new List();
+								projectDB = new Database(userName, pwd);
+
+								if (!errorconnected) {
+									logs.setText("Please select the database name.");
+								    int sizelist = dblist.getItemCount();
+									for(int o = 0 ; o < sizelist; o++) {
+										dbNameCb.addItem(dblist.getItem(o));
+									}
+									dbNameCb.setEnabled(true);
+									connect.setEnabled(true);
+
+
+								}
+							}
+
+						} catch (Exception e1) {
+							logs.setText(e1.getMessage());
+						}
+
+						progressBar.setVisible(false);
+
+					}
+				}).start();
+
+			}
+		});
+		
+		
+		/**
 		 * onClick on Connect
 		 */
 		connect.addActionListener(new ActionListener() {
@@ -252,23 +311,23 @@ public class DBExcelImport extends JFrame {
 
 						logs.setText("Connecting to DB ...");
 						progressBar.setVisible(true);
+
 						try {
-							dbName = dbNameTxt.getText();
-							userName = userNameTxt.getText();
-							pwd = pwdTxt.getText();
 
 							errorconnected = false;
 
-							if (dbNameTxt.getText().equals("") || userNameTxt.getText().equals("")) {
-								logs.setText("DB name and DB user name can't be empty!");
-							} else {
-								projectDB = new Database(dbName, userName, pwd);
+								dblist = new List();
+								String dbnameSelected = dbNameCb.getSelectedItem().toString();
+								projectDB.connectToOneDB(dbnameSelected);
 
 								if (!errorconnected) {
 									logs.setText("Connected Successfully!");
+
 									readFileBtn.setEnabled(true);
+
+
 								}
-							}
+							
 
 						} catch (Exception e1) {
 							logs.setText(e1.getMessage());
@@ -281,6 +340,7 @@ public class DBExcelImport extends JFrame {
 
 			}
 		});
+
 
 		/**
 		 * onClick on View
@@ -333,7 +393,7 @@ public class DBExcelImport extends JFrame {
 								scrollExcelTable.setBounds(30, 45, 400, 200);
 								excelTable.setVisible(true);
 
-								paneT.add(scrollExcelTable, "Sheet" + t);
+								paneT.add(scrollExcelTable, "Sheet " + (t+1));
 								paneT.revalidate();
 								paneT.repaint();
 
@@ -431,7 +491,7 @@ public class DBExcelImport extends JFrame {
 								scrollDBTable.setBounds(30, 275, 400, 200);
 								dbTable.setVisible(true);
 
-								pane.add(scrollDBTable, "Sheet" + n);
+								pane.add(scrollDBTable, "Sheet " + (n+1));
 								pane.revalidate();
 								pane.repaint();
 

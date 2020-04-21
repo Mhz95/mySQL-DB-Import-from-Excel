@@ -4,30 +4,61 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+
+import com.mysql.cj.jdbc.DatabaseMetaData;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 public class Database {
 	
 	Connection conn = null;
+	Connection connToSpecificDB = null;
 
+	String userName = "";
+	String pwd = "";
 
 	static Vector data = new Vector();
 	
-	Database(String dbName, String userName, String pwd) {
+	Database(String userName, String pwd) {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-
+            String databaseURL = "jdbc:mysql://localhost:3306/";
             // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName+"&"+pwd);
 
+        	 this.userName = userName;
+        	 this.pwd = pwd;
+            this.conn = DriverManager.getConnection(databaseURL, userName , pwd);
+            
+
+            DatabaseMetaData metadata = (DatabaseMetaData) this.conn.getMetaData();
+           
+            ResultSet result = metadata.getCatalogs();
+
+            String dbname = "";
+            while (result.next()) {
+                 dbname = result.getString(1);
+                DBExcelImport.dblist.add(dbname); 
+
+            } 
 
         } catch (Exception ex) {
-            //ex.printStackTrace();
-        	DBExcelImport.errorconnected = true;
-        	DBExcelImport.logs.setText(ex.getMessage());
+            ex.printStackTrace();
+
         }
 	}
-	
+	public void connectToOneDB(String dbName) {
+
+    try {
+		this.connToSpecificDB = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName+"&"+pwd);
+		this.conn = this.connToSpecificDB;
+    
+    } catch (SQLException e) {
+		// TODO Auto-generated catch block
+//		e.printStackTrace();
+    	DBExcelImport.errorconnected = true;
+    	DBExcelImport.logs.setText(e.getMessage());
+	}
+    
+	}
 	public void dropTable(GeneralTable gtable) {
 		
 				try {
@@ -88,16 +119,6 @@ public class Database {
 			}
 			query += ")  ENGINE=INNODB;";
 
-// Other types we may configure - Mhz
-			
-//					"    title VARCHAR(255) NOT NULL,\n" + 
-//					"    start_date DATE,\n" + 
-//					"    due_date DATE,\n" + 
-//					"    status TINYINT NOT NULL,\n" + 
-//					"    priority TINYINT NOT NULL,\n" + 
-//					"    description TEXT,\n" + 
-//					"    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n" + 
-//					")  ENGINE=INNODB;";
 
 			int rs = stmt.executeUpdate(query);
 			
@@ -181,6 +202,7 @@ public class Database {
 	return null;
 
 }
+
 
 
 }
