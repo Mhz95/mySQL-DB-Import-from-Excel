@@ -1,11 +1,18 @@
 import java.awt.*;
+import java.awt.List;
 import java.awt.event.*;
 import java.io.*;
 import java.sql.SQLSyntaxErrorException;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import exception.InvalidExcelFileException;
 
@@ -54,9 +61,10 @@ public class DBExcelImport extends JFrame {
 	JTable dbTable;
 	JScrollPane scrollDBTable;
 	JScrollPane scrollExcelTable;
-	JComboBox<Integer> sheetNumCb;
+	JComboBox<String> sheetNumCb;
 	static JTextArea logs;
 	static boolean errorconnected = false;
+	int numberOfSheets;
 
 	String dbName, userName, pwd;
 
@@ -90,7 +98,7 @@ public class DBExcelImport extends JFrame {
 		logsLbl = new JLabel("Logs :");
 		author = new JLabel("© Alya Alshammeri, Munerah H. Alzaidan, Nourah Alshahrani");
 		chooser = new JFileChooser();
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("excel table file", "xlsx", "xlsm");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("excel table file", "xlsx", "csv", "xlsm");
 		chooser.setFileFilter(filter);
 		logs = new JTextArea();
 
@@ -114,12 +122,12 @@ public class DBExcelImport extends JFrame {
 		dbNameTxt = new JTextField();
 		userNameTxt = new JTextField();
 		pwdTxt = new JPasswordField();
-		sheetNumCb = new JComboBox<Integer>();
+		sheetNumCb = new JComboBox<String>();
 		sheetNumCb.setEnabled(false);
-
 		excelTable = new JTable();
 		dbTable = new JTable();
 
+		
 		add(dbNameLbl);
 		add(dbNameTxt);
 		add(userNameLbl);
@@ -150,6 +158,8 @@ public class DBExcelImport extends JFrame {
 		 * 
 		 * @param (x,y,width,height)
 		 */
+		
+
 		dbNameLbl.setBounds(500, 10, 100, 40);
 		dbNameTxt.setBounds(500, 40, 100, 30);
 
@@ -259,7 +269,6 @@ public class DBExcelImport extends JFrame {
 								}
 							}
 
-
 						} catch (Exception e1) {
 							logs.setText(e1.getMessage());
 						}
@@ -289,23 +298,35 @@ public class DBExcelImport extends JFrame {
 						progressBar.setVisible(true);
 
 						try {
+							int temp;
+							if (sheetNumCb.getSelectedItem().toString().equals("All")) {
+								temp = numberOfSheets;
+							} else {
+								temp = 1;
+							}
+							for (int y = 0; y < temp; y++) {
+								if (!sheetNumCb.getSelectedItem().toString().equals("All")) {
+									int selectedSheet = sheetNumCb.getSelectedIndex();
+									GeneralTable table = mapper.map(selectedSheet);
+									logs.setText("Preview excel table for sheet: " + (selectedSheet + 1) + "\n");
+								} else {
+									GeneralTable table = mapper.map(y);
+									logs.setText("Preview excel table for sheet: " + (y + 1) + "\n");
+								}
 
-							int selectedSheet = sheetNumCb.getSelectedIndex();
+								DefaultTableModel model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
+								excelTable.setModel(model);
+								excelTable.setAutoCreateRowSorter(true);
+								excelTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+								model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
+								excelTable.setModel(model);
+								scrollExcelTable = new JScrollPane(excelTable);
 
-							GeneralTable table = mapper.map(selectedSheet);
+								scrollExcelTable.setBounds(30, 45, 400, 200);
+								excelTable.setVisible(true);
+								add(scrollExcelTable);
 
-							DefaultTableModel model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
-							excelTable.setModel(model);
-							excelTable.setAutoCreateRowSorter(true);
-							excelTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-							model = new DefaultTableModel(mapper.getData(), mapper.getHeader());
-							excelTable.setModel(model);
-							scrollExcelTable = new JScrollPane(excelTable);
-							scrollExcelTable.setBounds(30, 45, 400, 200);
-							excelTable.setVisible(true);
-							add(scrollExcelTable);
-
-							logs.setText("Preview excel table for sheet: " + (selectedSheet + 1) + "\n");
+							}
 
 							progressBar.setVisible(false);
 
@@ -355,28 +376,51 @@ public class DBExcelImport extends JFrame {
 						progressBar.setVisible(true);
 
 						try {
+							
 
-							int selectedSheet = sheetNumCb.getSelectedIndex();
+							int temp2;
 
-							GeneralTable table2 = mapper.map(selectedSheet);
+							if (sheetNumCb.getSelectedItem().toString().equals("All")) {
+								temp2 = numberOfSheets;
+								 
+							} else {
+								temp2 = 1;
+							}
+							JTabbedPane pane = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
+							for (int n = 0; n < temp2; n++) {
+								GeneralTable table2;
+								if (!sheetNumCb.getSelectedItem().toString().equals("All")) {
+									int selectedSheet = sheetNumCb.getSelectedIndex();
+									table2 = mapper.map(selectedSheet);
+									logs.setText("Preview imported to DB table for sheet: " + (selectedSheet + 1) + "\n");
+								} else {
+									table2 = mapper.map(n);
+									logs.setText("Preview imported to DB table for sheet: " + (n + 1) + "\n");
+								}
 
-							projectDB.createTable(table2);
-							projectDB.addTuples(table2);
-							projectDB.getTableTuples(table2);
-							Vector v = projectDB.getTableTuples(table2);
+								projectDB.createTable(table2);
+								projectDB.addTuples(table2);
+								projectDB.getTableTuples(table2);
+								Vector v = projectDB.getTableTuples(table2);
 
-							DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
-							dbTable.setModel(model2);
-							dbTable.setAutoCreateRowSorter(true);
-							dbTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-							model2 = new DefaultTableModel(v, mapper.getHeader());
-							dbTable.setModel(model2);
-							scrollDBTable = new JScrollPane(dbTable);
-							scrollDBTable.setBounds(30, 275, 400, 200);
-							dbTable.setVisible(true);
-							add(scrollDBTable);
+								DefaultTableModel model2 = new DefaultTableModel(v, mapper.getHeader());
+								dbTable.setModel(model2);
+								dbTable.setAutoCreateRowSorter(true);
+								dbTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+								model2 = new DefaultTableModel(v, mapper.getHeader());
+								dbTable.setModel(model2);
+								scrollDBTable = new JScrollPane(dbTable);
+								scrollDBTable.setBounds(30, 275, 400, 200);
+								dbTable.setVisible(true);
 
-							logs.setText("Preview imported to DB table for sheet: " + (selectedSheet + 1) + "\n");
+						        pane.add( scrollDBTable , "Sheet"+n );
+
+							}
+
+							add(pane);
+
+							pane.setBounds(30, 275, 400, 200);
+
 
 							progressBar.setVisible(false);
 
@@ -397,6 +441,7 @@ public class DBExcelImport extends JFrame {
 
 	}
 
+	
 	/**
 	 * Reset All
 	 */
@@ -426,16 +471,26 @@ public class DBExcelImport extends JFrame {
 		if (returnedValue == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = chooser.getSelectedFile();
 			file = selectedFile.getPath();
+			String filenamewithext = selectedFile.getName();
+			String extention = filenamewithext.substring(filenamewithext.indexOf("."), filenamewithext.length());
+			String filenamewithoutext = filenamewithext.substring(0, filenamewithext.indexOf("."));
+
+			if (extention.equals(".csv")) {
+				System.out.println("here");
+				file = csvToXLSX(file, filenamewithoutext);
+			}
+
 			textfilepath.setText(file);
 			try {
 
 				mapper = new ExcelToObjectMapper(file);
-				int numberOfSheets = mapper.SheetNumber;
+				numberOfSheets = mapper.SheetNumber;
 				numberOfSheets = numberOfSheets - 1;
 
 				for (int i = 0; i < numberOfSheets; i++) {
-					sheetNumCb.addItem(i + 1);
+					sheetNumCb.addItem(i + 1 + "");
 				}
+				sheetNumCb.addItem("All");
 				sheetNumCb.setEnabled(true);
 				viewBtn.setEnabled(true);
 				importBtn.setEnabled(true);
@@ -451,6 +506,33 @@ public class DBExcelImport extends JFrame {
 
 		}
 
+	}
+
+	public static String csvToXLSX(String csvFileAddress, String filenamewithoutext) {
+		try {
+			String xlsxFileAddress = filenamewithoutext + ".xlsx"; // xlsx file address
+			XSSFWorkbook workBook = new XSSFWorkbook();
+			XSSFSheet sheet = workBook.createSheet("sheet1");
+			String currentLine = null;
+			int RowNum = 0;
+			BufferedReader br = new BufferedReader(new FileReader(csvFileAddress));
+			while ((currentLine = br.readLine()) != null) {
+				String str[] = currentLine.split(",");
+				XSSFRow currentRow = sheet.createRow(RowNum);
+				for (int i = 0; i < str.length; i++) {
+					currentRow.createCell(i).setCellValue(str[i]);
+				}
+				RowNum++;
+			}
+
+			FileOutputStream fileOutputStream = new FileOutputStream(xlsxFileAddress);
+			workBook.write(fileOutputStream);
+			fileOutputStream.close();
+			return xlsxFileAddress;
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage() + "Exception in try");
+		}
+		return csvFileAddress;
 	}
 
 	public static void main(String[] args) {

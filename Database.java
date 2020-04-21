@@ -17,12 +17,8 @@ public class Database {
 		try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 
-                // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
-                if(pwd != "") {
-                    this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName+"&"+pwd);
-                } else {
-                    this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName);
-                }
+            // jdbc:SGBD://ip:port/database_name?user=username&password=pwd
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+"?"+userName+"&"+pwd);
 
 
         } catch (Exception ex) {

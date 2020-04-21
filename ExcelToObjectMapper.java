@@ -42,6 +42,7 @@ public class ExcelToObjectMapper {
             throw new InvalidExcelFileException(e.getMessage());
         }
     }
+        
 
     /**
      * Read data from Excel file and convert each rows into list of object.
@@ -149,86 +150,86 @@ public class ExcelToObjectMapper {
      * @param field Field which value need to be set.
      * @param cell Apache POI cell from which value needs to be retrived.
      */
-    private void setObjectFieldValueFromCell(Object obj, Field field, Cell cell){
-        Class<?> cls = field.getType();
-        field.setAccessible(true);
-        if(cls == String.class) {
-            try {
-                field.set(obj, cell.getStringCellValue());
-            }catch (Exception e) {
-                try {
-                    field.set(obj, null);
-                } catch (IllegalAccessException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        }
-        else if(cls == Date.class) {
-            try {
-                Date date = cell.getDateCellValue();
-                field.set(obj, date);
-            }catch (Exception e) {
-                try {
-                    field.set(obj, null);
-                } catch (IllegalAccessException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        }
-        else if(cls == int.class || cls == long.class || cls == float.class || cls == double.class ){
-            double value = cell.getNumericCellValue();
-            try {
-                if (cls == int.class) {
-                    field.set(obj, (int) value);
-                }
-                else if (cls == long.class) {
-                    field.set(obj, (long) value);
-                }
-                else if (cls == float.class) {
-                    field.set(obj, (float) value);
-                }
-                else {
-                    //Double value
-                    field.set(obj, value);
-                }
-            }catch (Exception e) {
-                try {
-                    field.set(obj, null);
-                } catch (IllegalAccessException e1) {
-                    System.out.println("chinna - ");
-                    e1.printStackTrace();
-                }
-            }
-        }
-        /*else if(cls == boolean.class) {
-            boolean value = cell.getBooleanCellValue();
-            try {
-                field.set(obj, value);
-            }catch (Exception e) {
-                try {
-                    field.set(obj, null);
-                } catch (IllegalAccessException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        }/
-        /*else if(cls == Collection.class) {
-            double value = cell.getNumericCellValue();
-            try {
-                field.set(obj, value);
-            }catch (Exception e) {
-                try {
-                    field.set(obj, null);
-                } catch (IllegalAccessException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        }*/
-        else {
-            // Unsupported data type.
-        }
-
-    }
+//    private void setObjectFieldValueFromCell(Object obj, Field field, Cell cell){
+//        Class<?> cls = field.getType();
+//        field.setAccessible(true);
+//        if(cls == String.class) {
+//            try {
+//                field.set(obj, cell.getStringCellValue());
+//            }catch (Exception e) {
+//                try {
+//                    field.set(obj, null);
+//                } catch (IllegalAccessException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        }
+//        else if(cls == Date.class) {
+//            try {
+//                Date date = cell.getDateCellValue();
+//                field.set(obj, date);
+//            }catch (Exception e) {
+//                try {
+//                    field.set(obj, null);
+//                } catch (IllegalAccessException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        }
+//        else if(cls == int.class || cls == long.class || cls == float.class || cls == double.class ){
+//            double value = cell.getNumericCellValue();
+//            try {
+//                if (cls == int.class) {
+//                    field.set(obj, (int) value);
+//                }
+//                else if (cls == long.class) {
+//                    field.set(obj, (long) value);
+//                }
+//                else if (cls == float.class) {
+//                    field.set(obj, (float) value);
+//                }
+//                else {
+//                    //Double value
+//                    field.set(obj, value);
+//                }
+//            }catch (Exception e) {
+//                try {
+//                    field.set(obj, null);
+//                } catch (IllegalAccessException e1) {
+//                    System.out.println("chinna - ");
+//                    e1.printStackTrace();
+//                }
+//            }
+//        }
+//        /*else if(cls == boolean.class) {
+//            boolean value = cell.getBooleanCellValue();
+//            try {
+//                field.set(obj, value);
+//            }catch (Exception e) {
+//                try {
+//                    field.set(obj, null);
+//                } catch (IllegalAccessException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        }/
+//        /*else if(cls == Collection.class) {
+//            double value = cell.getNumericCellValue();
+//            try {
+//                field.set(obj, value);
+//            }catch (Exception e) {
+//                try {
+//                    field.set(obj, null);
+//                } catch (IllegalAccessException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        }*/
+//        else {
+//            // Unsupported data type.
+//        }
+//
+//    }
 
     /**
      * Create Apache POI @{@link Workbook} for given excel file.
@@ -249,21 +250,21 @@ public class ExcelToObjectMapper {
      * @return Index number of header name.
      * @throws InvalidObjectFieldNameException
      */
-    private int getHeaderIndex(String headerName, Workbook workbook) throws Exception {
-        Sheet sheet = workbook.getSheetAt(0);
-        int totalColumns = sheet.getRow(0).getLastCellNum();
-        int index = -1;
-        for (index=0; index<totalColumns;index++) {
-            Cell cell = sheet.getRow(0).getCell(index);
-            if(cell.getStringCellValue().toLowerCase().equals(headerName.toLowerCase())) {
-                break;
-            }
-        }
-        if(index == -1) {
-            throw new InvalidObjectFieldNameException("Invalid object field name provided.");
-        }
-        return index;
-    }
+//    private int getHeaderIndex(String headerName, Workbook workbook) throws Exception {
+//        Sheet sheet = workbook.getSheetAt(0);
+//        int totalColumns = sheet.getRow(0).getLastCellNum();
+//        int index = -1;
+//        for (index=0; index<totalColumns;index++) {
+//            Cell cell = sheet.getRow(0).getCell(index);
+//            if(cell.getStringCellValue().toLowerCase().equals(headerName.toLowerCase())) {
+//                break;
+//            }
+//        }
+//        if(index == -1) {
+//            throw new InvalidObjectFieldNameException("Invalid object field name provided.");
+//        }
+//        return index;
+//    }
     
     
     public Vector getData() {
