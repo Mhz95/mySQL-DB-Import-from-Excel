@@ -20,6 +20,6 @@ Run Jar file  ```DBExcelImport.jar```
 
 > Developed as part of a Computer Science MSc course   
 > Supervisor: Dr. Sofien Gannouni   
-> Course: CSC581: Database Systems 
+> Course: CSC581: Database Systems   
 > King Saud university    
 > April 2020
