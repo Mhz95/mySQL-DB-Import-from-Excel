@@ -1,4 +1,4 @@
-## Project 581 : DB import from excel + GUI
+## DB import from excel + GUI
 
 #### Steps to run:  
 Run Jar file  ```DBExcelImport.jar```  
@@ -15,4 +15,11 @@ Run Jar file  ```DBExcelImport.jar```
 - The software is able to read all sheets in a given Excel File.  
 - Handles different types of data.  
 - Has a Simple GUI.  
-- Usability and understandability.  
+- Usability and understandability.   
+
+
+> Developed as part of a Computer Science MSc course   
+> Supervisor: Dr. Sofien Gannouni   
+> Course: CSC581: Database Systems 
+> King Saud university    
+> April 2020
